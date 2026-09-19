@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SweetProcess</title>
+
+    <link
+  rel="preconnect"
+  href="https://fonts.googleapis.com"
+>
+<link
+  rel="preconnect"
+  href="https://fonts.gstatic.com"
+  crossorigin
+>
+<link
+  href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Jost:wght@400;500;600;700&display=swap"
+  rel="stylesheet"
+>
+    <link rel="stylesheet" href="./css/main.css">
+</head>
+<body>
+
+<!-- ================================
+     SITE HEADER
+================================ -->
+
+<header class="site-header">
+  <div class="container">
+
+    <nav class="site-nav" aria-label="Primary navigation">
+<div class="site-nav__left">
+      <!-- Logo -->
+      <a
+        href="/"
+        class="site-nav__logo"
+        aria-label="Product Name — Home"
+      >
+        Logo
+      </a>
+
+
+      <!-- Main Navigation -->
+      <ul class="site-nav__list">
+
+        <li class="site-nav__item">
+          <a
+            href="#customers"
+            class="site-nav__link"
+          >
+            Happy Customers
+          </a>
+        </li>
+
+        <li class="site-nav__item">
+          <a
+            href="#how-it-works"
+            class="site-nav__link"
+          >
+            How it works
+          </a>
+        </li>
+
+        <li class="site-nav__item">
+          <a
+            href="#pricing"
+            class="site-nav__link"
+          >
+            Pricing
+          </a>
+        </li>
+
+      </ul>
+</div>
+
+      <!-- Header Actions -->
+      <div class="site-nav__right">
+
+        <!-- Visible on desktop + tablet/mobile -->
+        <a
+          href="#live-demo"
+          class="site-nav__demo"
+        >
+          <span class="live-dot" aria-hidden="true"></span>
+          Live Demo
+        </a>
+
+        <!-- Desktop only -->
+        <a
+          href="/login"
+          class="site-nav__login"
+        >
+          Login
+        </a>
+
+        <!-- Desktop only -->
+        <a
+          href="/signup"
+          class="site-nav__cta"
+        >
+          Try it free
+        </a>
+
+        <!-- Tablet / Mobile only -->
+        <button
+          type="button"
+          class="site-menu__toggle"
+          id="menu-toggle"
+          aria-expanded="false"
+          aria-controls="site-menu"
+          aria-label="Open menu"
+        >
+          <span aria-hidden="true"></span>
+          <span aria-hidden="true"></span>
+        </button>
+
+      </div>
+
+    </nav>
+
+  </div>
+</header>
+
+
+<!-- ================================
+     MOBILE MENU OVERLAY
+================================ -->
+
+<aside
+  class="menu-overlay"
+  id="site-menu"
+  aria-hidden="true"
+>
+
+  <div class="menu-overlay__content">
+
+    <nav
+      class="menu-overlay__navigation"
+      aria-label="Mobile navigation"
+    >
+
+      <ul class="menu-overlay__list">
+
+        <li class="menu-overlay__item">
+          <a
+            href="#customers"
+            class="menu-overlay__link"
+          >
+            Happy Customers
+          </a>
+        </li>
+
+        <li class="menu-overlay__item">
+          <a
+            href="#how-it-works"
+            class="menu-overlay__link"
+          >
+            How it works
+          </a>
+        </li>
+
+        <li class="menu-overlay__item">
+          <a
+            href="#pricing"
+            class="menu-overlay__link"
+          >
+            Pricing
+          </a>
+        </li>
+
+      </ul>
+
+    </nav>
+
+
+    <!-- Overlay actions -->
+    <div class="menu-overlay__actions">
+
+      <a
+        href="/login"
+        class="menu-overlay__login"
+      >
+        Login
+      </a>
+
+      <a
+        href="/signup"
+        class="menu-overlay__cta"
+      >
+        Try it free
+      </a>
+
+    </div>
+
+  </div>
+
+</aside>
+
+
+<!-- ================================
+     MAIN
+================================ -->
+
+<main>
+
+  <!-- HERO -->
+  <section
+    class="hero"
+    id="hero"
+    aria-labelledby="hero-title"
+  >
+
+    <div class="container">
+
+      <div class="hero__content">
+
+        <p class="hero__eyebrow">
+          Process documentation made simple
+        </p>
+
+        <h1
+          id="hero-title"
+          class="hero__title"
+        >
+          Document processes,
+          procedures, and tasks
+          in one place.
+        </h1>
+
+        <p class="hero__description">
+          Give your team one clear place to document,
+          organize, and follow the way work gets done.
+        </p>
+
+        <div class="hero__actions">
+
+          <a
+            href="/signup"
+            class="hero__cta"
+          >
+            Try it free
+          </a>
+
+          <a
+            href="#live-demo"
+            class="hero__demo"
+          >
+            See live demo
+          </a>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+</main>
+
+
+<script src="./js/main.js" type="module"></script>
+
+  </body>
+</html>

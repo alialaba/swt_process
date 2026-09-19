@@ -1,0 +1,8 @@
+/* css/main.css */
+
+@import url("./base/reset.css");
+@import url("./base/accessibility.css");
+@import url("./base/variables.css");
+@import url("./layout/global.css");
+@import url("./layout/header.css");
+@import url("./sections/hero.css");

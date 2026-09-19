@@ -1,0 +1,369 @@
+:root {
+
+  /* =========================================================
+     01. BRAND COLORS
+     ========================================================= */
+
+  --color-brand-primary: #28BFDA;
+  --color-brand-dark: #005F6B;
+  --color-brand-deep: #21515A;
+
+  --color-brand-soft: #E0F7F9;
+
+
+  /* =========================================================
+     02. TEXT COLORS
+     ========================================================= */
+
+  --color-text-primary: #212529;
+  --color-text-secondary: #495057;
+  --color-text-muted: #6C757D;
+  --color-text-inverse: #FFFFFF;
+
+  /* Text used on brand/light-accent backgrounds */
+  --color-text-brand: #005F6B;
+
+
+  /* =========================================================
+     03. BACKGROUND COLORS
+     ========================================================= */
+
+  /* Main page */
+  --color-bg-main: #FFFFFF;
+
+  /* Alternating section */
+  --color-bg-section-alt: #F8FBFC;
+
+  /* Hero */
+  --color-bg-hero: #F2FCFE;
+
+  /* Brand highlight */
+  --color-bg-accent: #E0F7F9;
+
+  /* Dark brand section */
+  --color-bg-brand: #005F6B;
+
+  /* Footer / darkest surface */
+  --color-bg-dark: #212529;
+
+  /* Card */
+  --color-bg-card: #FFFFFF;
+
+
+  /* =========================================================
+     04. BORDER COLORS
+     ========================================================= */
+
+  --color-border-subtle: #E9F0F2;
+  --color-border-default: #CED4DA;
+  --color-border-strong: #6C757D;
+
+  /* Brand border */
+  --color-border-brand: #28BFDA;
+
+
+  /* =========================================================
+     05. INTERACTIVE COLORS
+     ========================================================= */
+
+  /* Primary action */
+  --color-interactive-primary: #28BFDA;
+
+  /* Hover */
+  --color-interactive-hover: #17AFCB;
+
+  /* Active / pressed */
+  --color-interactive-active: #0D91A9;
+
+  /* Dark interactive */
+  --color-interactive-dark: #005F6B;
+
+  /* Focus */
+  --color-interactive-focus: #288FDA;
+
+
+  /* =========================================================
+     06. SEMANTIC / STATUS COLORS
+     ========================================================= */
+
+  /* Success */
+  --color-success: #198754;
+  --color-success-bg: #E9F7EF;
+
+  /* Warning */
+  --color-warning: #F1D300;
+  --color-warning-bg: #FFF9D6;
+
+  /* Error */
+  --color-error: #DC3545;
+  --color-error-bg: #FDEBEC;
+
+  /* Information */
+  --color-info: #288FDA;
+  --color-info-bg: #EAF5FC;
+
+
+  /* =========================================================
+     07. TYPOGRAPHY — FONT FAMILIES
+     ========================================================= */
+
+  /* Brand / headings */
+  --font-heading:
+    "Jost",
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    sans-serif;
+
+  /* Body / UI */
+  --font-body:
+    "Inter",
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    Roboto,
+    "Helvetica Neue",
+    Arial,
+    sans-serif;
+
+
+  /* =========================================================
+     08. FONT WEIGHTS
+     ========================================================= */
+
+  --font-weight-regular: 400;
+  --font-weight-medium: 500;
+  --font-weight-semibold: 600;
+  --font-weight-bold: 700;
+
+
+  /* =========================================================
+     09. TYPOGRAPHIC SCALE
+     ========================================================= */
+
+  /* Small UI text */
+  --font-size-xs: 0.75rem;       /* 12px */
+
+  /* Small body / labels */
+  --font-size-sm: 0.875rem;      /* 14px */
+
+  /* Default body */
+  --font-size-base: 1rem;        /* 16px */
+
+  /* Large body */
+  --font-size-lg: 1.125rem;      /* 18px */
+
+  /* Small heading */
+  --font-size-xl: 1.25rem;       /* 20px */
+
+  /* Card / subsection heading */
+  --font-size-2xl: 1.5rem;       /* 24px */
+
+  /* Section heading */
+  --font-size-3xl: 2rem;         /* 32px */
+
+
+  /* =========================================================
+     10. DISPLAY TYPOGRAPHY
+     ========================================================= */
+
+  --font-size-display-sm: 2.5rem;    /* 40px */
+  --font-size-display-md: 3.25rem;   /* 52px */
+  --font-size-display-lg: 4rem;      /* 64px */
+
+
+  /* =========================================================
+     11. FLUID MARKETING TYPOGRAPHY
+     ========================================================= */
+
+  --font-size-hero:
+    clamp(2.5rem, 5vw, 4rem);
+
+  --font-size-section-title:
+    clamp(2rem, 3.5vw, 3.25rem);
+
+  --font-size-section-lead:
+    clamp(1.0625rem, 1.5vw, 1.25rem);
+
+
+  /* =========================================================
+     12. LINE HEIGHTS
+     ========================================================= */
+
+  --line-height-tight: 1.1;
+  --line-height-snug: 1.25;
+  --line-height-normal: 1.5;
+  --line-height-relaxed: 1.65;
+
+
+  /* =========================================================
+     13. LETTER SPACING
+     ========================================================= */
+
+  --letter-spacing-tight: -0.02em;
+  --letter-spacing-normal: 0;
+  --letter-spacing-wide: 0.02em;
+  --letter-spacing-wider: 0.05em;
+
+
+  /* =========================================================
+     14. 8PT SPACING SYSTEM
+     ========================================================= */
+
+  --space-0: 0;
+
+  --space-xs: 0.5rem;       /* 8px */
+  --space-sm: 1rem;         /* 16px */
+  --space-md: 1.5rem;       /* 24px */
+  --space-lg: 2rem;         /* 32px */
+  --space-xl: 3rem;         /* 48px */
+  --space-2xl: 4rem;        /* 64px */
+
+  /* Extended */
+  --space-3xl: 5rem;        /* 80px */
+  --space-4xl: 6rem;        /* 96px */
+  --space-5xl: 7.5rem;      /* 120px */
+
+
+  /* =========================================================
+     15. COMPONENT SPACING — BUTTONS
+     ========================================================= */
+
+  --button-padding-y-sm: 0.5rem;      /* 8px */
+  --button-padding-x-sm: 1rem;        /* 16px */
+
+  --button-padding-y: 0.75rem;        /* 12px */
+  --button-padding-x: 1.25rem;        /* 20px */
+
+  --button-padding-y-lg: 1rem;        /* 16px */
+  --button-padding-x-lg: 1.5rem;      /* 24px */
+
+
+  /* =========================================================
+     16. COMPONENT SPACING — CARDS
+     ========================================================= */
+
+  --card-padding-sm: 1rem;            /* 16px */
+  --card-padding-md: 1.5rem;          /* 24px */
+  --card-padding-lg: 2rem;            /* 32px */
+  --card-padding-xl: 3rem;            /* 48px */
+
+
+  /* =========================================================
+     17. SECTION SPACING
+     ========================================================= */
+
+  --section-padding-y-sm: 4rem;        /* 64px */
+  --section-padding-y-md: 6rem;        /* 96px */
+  --section-padding-y-lg: 7.5rem;      /* 120px */
+
+  --section-gap: 4rem;                 /* 64px */
+
+
+  /* =========================================================
+     18. CONTAINER / LAYOUT
+     ========================================================= */
+
+  --container-sm: 640px;
+  --container-md: 768px;
+  --container-lg: 1024px;
+  --container-xl: 1200px;
+  --container-2xl: 1320px;
+
+  /* Comfortable reading width */
+  --content-reading-width: 720px;
+
+
+  /* =========================================================
+     19. BORDER RADIUS
+     ========================================================= */
+
+  --radius-sm: 0.25rem;        /* 4px */
+  --radius-md: 0.5rem;         /* 8px */
+  --radius-lg: 0.75rem;        /* 12px */
+  --radius-xl: 1rem;            /* 16px */
+
+  /* Components */
+  --radius-button: 0.5rem;     /* 8px */
+  --radius-input: 0.5rem;      /* 8px */
+  --radius-card: 0.75rem;      /* 12px */
+  --radius-panel: 1rem;        /* 16px */
+
+  /* Pill */
+  --radius-pill: 999px;
+
+
+  /* =========================================================
+     20. BORDERS
+     ========================================================= */
+
+  --border-width-thin: 1px;
+  --border-width-medium: 2px;
+
+
+  /* =========================================================
+     21. ELEVATION / SHADOWS
+     ========================================================= */
+
+  --shadow-none: none;
+
+  --shadow-sm:
+    0 1px 2px rgba(33, 37, 41, 0.05);
+
+  --shadow-md:
+    0 4px 12px rgba(33, 37, 41, 0.08);
+
+  --shadow-lg:
+    0 12px 32px rgba(33, 37, 41, 0.10);
+
+  --shadow-xl:
+    0 20px 48px rgba(33, 37, 41, 0.12);
+
+  /* Keyboard focus */
+  --shadow-focus:
+    0 0 0 3px rgba(40, 143, 218, 0.25);
+
+
+  /* =========================================================
+     22. TRANSITIONS
+     ========================================================= */
+
+  --transition-fast:
+    150ms cubic-bezier(0.4, 0, 0.2, 1);
+
+  --transition-base:
+    250ms cubic-bezier(0.4, 0, 0.2, 1);
+
+  --transition-slow:
+    400ms cubic-bezier(0.4, 0, 0.2, 1);
+
+
+  /* =========================================================
+     23. Z-INDEX
+     ========================================================= */
+
+  --z-base: 1;
+  --z-dropdown: 100;
+  --z-sticky: 200;
+  --z-overlay: 300;
+  --z-modal: 400;
+  --z-toast: 500;
+
+
+  /* =========================================================
+     24. ACCESSIBILITY
+     ========================================================= */
+
+  --focus-outline-width: 3px;
+  --focus-outline-offset: 3px;
+
+
+  /* =========================================================
+     25. MOTION
+     ========================================================= */
+
+  --motion-distance-sm: 4px;
+  --motion-distance-md: 8px;
+  --motion-distance-lg: 16px;
+
+}
