@@ -92,8 +92,8 @@ function initializeProofCycler(proof) {
 // console.log(proofCycler)
 // proofCycler.forEach(initializeProofCycler)
 function renderProof(proofItems) {
-    const logos = proofItems.map((proof, index)=>{
-        return `
+  const logos = proofItems.map((proof, index) => {
+    return `
         <button class="proof__logo-wrap${index === 0 ? " is-active" : ""}"
         data-proof-trigger="${index}"
           aria-label="Show ${proof.company} result"
@@ -105,9 +105,9 @@ function renderProof(proofItems) {
           >
         </button>
         `
-    }).join("");
+  }).join("");
 
-      const quotes = proofItems
+  const quotes = proofItems
     .map((proof, index) => {
       return `
         <p
@@ -121,7 +121,7 @@ function renderProof(proofItems) {
     })
     .join("");
 
-     return `
+  return `
     <div
       class="proof"
       data-proof-cycler
@@ -187,7 +187,7 @@ const PROCESSES_CARDS = [
     description:
       "Give every new employee a clear path through your processes, procedures, and tasks.",
 
-     proof: [
+    proof: [
       {
         company: "Anthropic",
         logo: "./assets/logos/anthropic.svg",
@@ -214,7 +214,7 @@ const PROCESSES_CARDS = [
       poster: "./assets/images/onboarding.jpg"
     }
   },
-    {
+  {
     id: "customer",
     eyebrow: "Customer",
     title: "Make financial processes easier to follow",
@@ -256,7 +256,7 @@ const PROCESSES_CARDS = [
     description:
       "Give every new employee a clear path through your processes, procedures, and tasks.",
 
-     proof: [
+    proof: [
       {
         company: "Anthropic",
         logo: "./assets/logos/anthropic.svg",
@@ -291,8 +291,8 @@ const PROCESSES_CARDS = [
 
 const processList = document.querySelector("[data-process-list]");
 
-function renderProcessCard (process) {
-return `
+function renderProcessCard(process) {
+  return `
 <div class="process-showcase__item" data-process="${process.id}">
 <article class="process-showcase__card" >
 <div class="process-showcase__left">
@@ -325,12 +325,29 @@ return `
           </div>
 
           <div class="process-showcase__action">
-            <button type="button">
-              Start free trial
+            <button class="btn btn--primary" type="button">
+             <span>Try it free</span>
+
+  <svg
+    class="btn__icon"
+    width="18"
+    height="18"
+    viewBox="0 0 24 24"
+    fill="none"
+    aria-hidden="true"
+  >
+    <path
+      d="M5 12h14M13 6l6 6-6 6"
+      stroke="currentColor"
+      stroke-width="2"
+      stroke-linecap="round"
+      stroke-linejoin="round"
+    />
+  </svg>
             </button>
 
-            <button type="button">
-              Explore Sweet AI
+            <button class="btn btn--secondary" type="button">
+            <span>  Explore Sweet AI</span>
             </button>
           </div>
 
@@ -419,6 +436,10 @@ function initializeProcessStack() {
 
   measureItems();
   updateStack();
+  //   document.fonts.ready.then(() => {
+  //   measureItems();
+  //   updateStack();
+  // });
 
   window.addEventListener("scroll", requestUpdate, {
     passive: true,
@@ -431,134 +452,3 @@ function initializeProcessStack() {
 }
 
 initializeProcessStack();
-
-// const processItems = document.querySelectorAll(
-//   ".process-showcase__item"
-// );
-
-// function inspectStackPosition() {
-//   processItems.forEach((item, index) => {
-//     const card = item.querySelector(
-//       ".process-showcase__card"
-//     );
-
-//     const itemRect = item.getBoundingClientRect();
-//     const cardRect = card.getBoundingClientRect();
-
-//     console.log(`Card ${index + 1}`, {
-//       itemTop: Math.round(itemRect.top),
-//       cardTop: Math.round(cardRect.top),
-//       itemBottom: Math.round(itemRect.bottom),
-//       cardBottom: Math.round(cardRect.bottom)
-//     });
-//   });
-// }
-
-// window.addEventListener(
-//   "scroll",
-//   inspectStackPosition,
-//   { passive: true }
-// );
-
-// inspectStackPosition();
-
-
-// const card = document.querySelector(
-//   ".process-showcase__card"
-// );
-
-// let element = card;
-
-// while (element) {
-//   console.log(
-//     element.tagName,
-//     element.className,
-//     {
-//       position: getComputedStyle(element).position,
-//       overflow: getComputedStyle(element).overflow,
-//       overflowY: getComputedStyle(element).overflowY
-//     }
-//   );
-
-//   element = element.parentElement;
-// }
-
-// getComputedStyle(
-//   document.querySelector(".process-showcase__card")
-// ).position;
-
-// getComputedStyle(
-//   document.querySelector(".process-showcase__card")
-// ).top;
-
-// const cardi = document.querySelector(
-//   ".process-showcase__card"
-// );
-
-// const item = document.querySelector(
-//   ".process-showcase__item"
-// );
-
-// console.log({
-//   stickyPosition: getComputedStyle(cardi).position,
-//   stickyTop: getComputedStyle(cardi).top,
-//   cardHeight: cardi.getBoundingClientRect().height,
-//   itemHeight: item.getBoundingClientRect().height,
-//   viewportHeight: window.innerHeight
-// });
-
-
-// const card = document.querySelector(
-//   ".process-showcase__card"
-// );
-
-// const item = document.querySelector(
-//   ".process-showcase__item"
-// );
-
-// console.log({
-//   viewportHeight: window.innerHeight,
-//   cardHeight: cardi.getBoundingClientRect().height,
-//   itemHeight: item.getBoundingClientRect().height
-// });
-
-// const items = document.querySelectorAll(
-//   ".process-showcase__item"
-// );
-
-// items.forEach((item, index) => {
-//   const card = item.querySelector(
-//     ".process-showcase__card"
-//   );
-
-//   console.log(`Card ${index + 1}`, {
-//     itemHeight: Math.round(
-//       item.getBoundingClientRect().height
-//     ),
-//     cardHeight: Math.round(
-//       card.getBoundingClientRect().height
-//     ),
-//     viewportHeight: window.innerHeight
-//   });
-// });
-
-// const card = document.querySelector(
-//   ".process-showcase__card"
-// );
-
-// function inspectCard() {
-//   const rect = card.getBoundingClientRect();
-
-//   console.log({
-//     top: Math.round(rect.top),
-//     bottom: Math.round(rect.bottom)
-//   });
-// }
-
-// window.addEventListener(
-//   "scroll",
-//   inspectCard,
-//   { passive: true }
-// );
-
-// inspectCard();
