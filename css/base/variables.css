@@ -273,6 +273,19 @@
   /* Comfortable reading width */
   --content-reading-width: 720px;
 
+    /* ---------- Layout ---------- */
+
+    --container-width:
+        1440px;
+
+    --container-padding: 5%;
+
+    /* --gutter:
+        32px; */
+
+    --header-height:
+        68px;
+
 
   /* =========================================================
      19. BORDER RADIUS

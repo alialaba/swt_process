@@ -3,27 +3,28 @@
     min-height: 100svh;
     overflow: hidden;
     background: var(--color-bg-hero);
+    /* padding-top: 100px; */
+    /* display: flex; */
+    /* align-items: center; */
     display: flex;
-    align-items: center;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding-bottom: 50px;
 }
 
 .hero__content {
-    width: min(100%, 760px);
-    padding-top: 100px;
+    /* width: min(100%, 760px);
+    padding-top: 100px; */
 }
-
-.hero__eyebrow {
-    margin-bottom: var(--space-sm);
-
-    color: var(--color-brand-deep);
-
-    font-size: var(--font-size-sm);
-    font-weight: var(--font-weight-semibold);
+.hero__inner{
+    display: flex;
+    /* align-items: center; */
+    justify-content: space-between;
 }
 
 .hero__title {
     margin: 0;
-
+  max-width: 500px;
     color: var(--color-text-primary);
 
     font-family: var(--font-heading);
