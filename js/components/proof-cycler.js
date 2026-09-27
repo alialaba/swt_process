@@ -379,76 +379,76 @@ processList.innerHTML = PROCESSES_CARDS.map(renderProcessCard).join("")
 document.querySelectorAll("[data-proof-cycler]").forEach(initializeProofCycler)
 
 
-function initializeProcessStack() {
-  const items = [
-    ...document.querySelectorAll(".process-showcase__item"),
-  ];
+// function initializeProcessStack() {
+//   const items = [
+//     ...document.querySelectorAll(".process-showcase__item"),
+//   ];
 
-  if (!items.length) return;
+//   if (!items.length) return;
 
-  const PIN_TOP = 80;
+//   const PIN_TOP = 80;
 
-  let ticking = false;
+//   let ticking = false;
 
-  let itemPositions = [];
+//   let itemPositions = [];
 
-  function measureItems() {
-    itemPositions = items.map((item) => {
-      return {
-        item,
-        top: item.getBoundingClientRect().top + window.scrollY,
-      };
-    });
-  }
+//   function measureItems() {
+//     itemPositions = items.map((item) => {
+//       return {
+//         item,
+//         top: item.getBoundingClientRect().top + window.scrollY,
+//       };
+//     });
+//   }
 
-  function updateStack() {
-    const scrollY = window.scrollY;
+//   function updateStack() {
+//     const scrollY = window.scrollY;
 
-    itemPositions.forEach(({ item, top }, index) => {
-      const card = item.querySelector(".process-showcase__card");
+//     itemPositions.forEach(({ item, top }, index) => {
+//       const card = item.querySelector(".process-showcase__card");
 
-      if (!card) return;
+//       if (!card) return;
 
-      const distancePastPin =
-        scrollY + PIN_TOP - top;
+//       const distancePastPin =
+//         scrollY + PIN_TOP - top;
 
-      if (distancePastPin > 0) {
-        card.style.transform =
-          `translate3d(0, ${distancePastPin}px, 0)`;
-      } else {
-        card.style.transform =
-          "translate3d(0, 0, 0)";
-      }
+//       if (distancePastPin > 0) {
+//         card.style.transform =
+//           `translate3d(0, ${distancePastPin}px, 0)`;
+//       } else {
+//         card.style.transform =
+//           "translate3d(0, 0, 0)";
+//       }
 
-      card.style.zIndex = String(index + 1);
-    });
+//       card.style.zIndex = String(index + 1);
+//     });
 
-    ticking = false;
-  }
+//     ticking = false;
+//   }
 
-  function requestUpdate() {
-    if (ticking) return;
+//   function requestUpdate() {
+//     if (ticking) return;
 
-    ticking = true;
+//     ticking = true;
 
-    requestAnimationFrame(updateStack);
-  }
+//     requestAnimationFrame(updateStack);
+//   }
 
-  measureItems();
-  updateStack();
-  //   document.fonts.ready.then(() => {
-  //   measureItems();
-  //   updateStack();
-  // });
+//   measureItems();
+//   updateStack();
+//   //   document.fonts.ready.then(() => {
+//   //   measureItems();
+//   //   updateStack();
+//   // });
 
-  window.addEventListener("scroll", requestUpdate, {
-    passive: true,
-  });
+//   window.addEventListener("scroll", requestUpdate, {
+//     passive: true,
+//   });
 
-  window.addEventListener("resize", () => {
-    measureItems();
-    requestUpdate();
-  });
-}
+//   window.addEventListener("resize", () => {
+//     measureItems();
+//     requestUpdate();
+//   });
+// }
 
-initializeProcessStack();
+// initializeProcessStack();
