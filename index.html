@@ -173,7 +173,7 @@
             </div>
           </div>
 
-<!-- 
+          <!-- 
           <div class="section--headline-video__video-col">
             <div class="section__video">
               <iframe loading="lazy"
@@ -194,15 +194,174 @@
 
 
         <div class="process-showcase__intro">
-  
-        <h2>Process</h2>
-           <p>Whether you manage a team or you’re hiring your first employee, SweetProcess gives you the systemization you need to scale and grow your business. </p>
+
+          <h2>Process</h2>
+          <p>SweetProcess gives you the systemization you need to scale and grow your business. </p>
         </div>
 
         <div class="process-showcase__list" data-process-list></div>
       </div>
 
     </section>
+
+   <!--
+  This is the ARIA "tabs" pattern: one shared panel, five tab buttons that
+  each swap its content. Two accessibility details that matter here and
+  need to be kept in sync by whatever JS drives the swap (I can write that
+  next if you want it now):
+
+  1. Roving tabindex: only the ACTIVE tab has tabindex="0"; every inactive
+     tab has tabindex="-1". Arrow-key navigation between tabs (not Tab key)
+     is the expected keyboard behavior for this pattern — Left/Right or
+     Up/Down should move focus and select, matching the WAI-ARIA APG.
+  2. The shared panel's aria-labelledby must be updated to point at
+     whichever tab is currently active, and its image (src + alt) swapped —
+     otherwise a screen reader announces stale information tied to a tab
+     that's no longer selected.
+-->
+
+<section class="how-it-works" id="how-it-works" aria-labelledby="how-it-works-title">
+  <div class="container">
+
+    <div class="how-it-works__intro">
+      <div class="how-it-works__content">
+        <h2 id="how-it-works-title">How it works</h2>
+        <p id="">SweetProcess gives you the systemization you need to scale and grow your business.</p>
+      </div>
+      <a href="#live-demo" class="btn btn--primary">Live Demo</a>
+    </div>
+
+    <div class="how-it-works__body">
+
+      <div class="how-it-works__list" role="tablist" aria-orientation="vertical" aria-label="Product areas">
+
+        <button
+          type="button"
+          role="tab"
+          class="how-it-works__tab is-active"
+          id="tab-procedures"
+          aria-selected="true"
+          tabindex="0"
+          aria-controls="how-it-works-panel"
+          data-panel="procedures"
+        >
+          <span class="how-it-works__tab-icon" aria-hidden="true">
+            <img src="./assests/icons8-procedures-100.png" alt="icons8-procedures-100"/>
+          </span>
+          <span class="how-it-works__tab-text">
+            <span class="how-it-works__tab-title">Document Procedures</span>
+            <span class="how-it-works__tab-desc">
+              Empower your team with all the information they need to do their job right. By documenting repetitive tasks in one place there's less emails and no more guesswork.
+            </span>
+          </span>
+        </button>
+
+        <button
+          type="button"
+          role="tab"
+          class="how-it-works__tab"
+          id="tab-policies"
+          aria-selected="false"
+          tabindex="-1"
+          aria-controls="how-it-works-panel"
+          data-panel="policies"
+        >
+          <span class="how-it-works__tab-icon" aria-hidden="true">
+            <img src="./assests/icons8-policies-100.png" alt="policies"/>
+          </span>
+          <span class="how-it-works__tab-text">
+            <span class="how-it-works__tab-title">Implement Policies</span>
+            <span class="how-it-works__tab-desc">
+              SweetProcess helps you create, share and ensure correct adoption of your business's policies. Having the right policies in place is essential in maintaining standards and can help protect your business.
+            </span>
+          </span>
+        </button>
+
+        <button
+          type="button"
+          role="tab"
+          class="how-it-works__tab"
+          id="tab-processes"
+          aria-selected="false"
+          tabindex="-1"
+          aria-controls="how-it-works-panel"
+          data-panel="processes"
+        >
+          <span class="how-it-works__tab-icon" aria-hidden="true">
+            <img  src="./assests/icons8-sdlc-100.png" alt="processes icon"/>
+          </span>
+          <span class="how-it-works__tab-text">
+            <span class="how-it-works__tab-title">Master Processes</span>
+            <span class="how-it-works__tab-desc">
+              An organisation should always be looking to improve their processes. SweetProcess gives you the platform to craft, collaborate and refine processes so you can continue to grow your business.
+            </span>
+          </span>
+        </button>
+
+        <button
+          type="button"
+          role="tab"
+          class="how-it-works__tab"
+          id="tab-tasks"
+          aria-selected="false"
+          tabindex="-1"
+          aria-controls="how-it-works-panel"
+          data-panel="tasks"
+        >
+          <span class="how-it-works__tab-icon" aria-hidden="true">
+            <img src="./assests/icons8-tasks-100.png" alt="task iocn" />
+          </span>
+          <span class="how-it-works__tab-text">
+            <span class="how-it-works__tab-title">Manage Tasks</span>
+            <span class="how-it-works__tab-desc">
+              Did Matt finish the weekly email campaign? Which step is Julia up to in the client discovery process? Stay in the know as you track latest activity or look back in the history of any task or procedure.
+            </span>
+          </span>
+        </button>
+
+        <button
+          type="button"
+          role="tab"
+          class="how-it-works__tab"
+          id="tab-knowledge-base"
+          aria-selected="false"
+          tabindex="-1"
+          aria-controls="how-it-works-panel"
+          data-panel="knowledge-base"
+        >
+          <span class="how-it-works__tab-icon" aria-hidden="true">
+            <img src="./assests/icons8-knowledge-100.png" alt="knowledge base"/>
+          </span>
+          <span class="how-it-works__tab-text">
+            <span class="how-it-works__tab-title">Public or Private Knowledge Base</span>
+            <span class="how-it-works__tab-desc">
+              Turn your existing procedures and policies into a beautiful knowledge base for your employees or clients. Your knowledge base comes built in with search, feedback forms, tracking and more!
+            </span>
+          </span>
+        </button>
+
+      </div>
+
+      <div
+        class="how-it-works__panel"
+        id="how-it-works-panel"
+        role="tabpanel"
+        aria-labelledby="tab-procedures"
+        tabindex="0"
+      >
+        <img
+          class="how-it-works__image"
+          id="how-it-works-image"
+          src="https://www.sweetprocess.com/wp-content/themes/sweetprocess/theme-2020/images/screenshots/procedure-page.png"
+          alt="SweetProcess procedure page screenshot"
+          loading="lazy"
+        >
+      </div>
+
+    </div>
+
+  </div>
+</section>
 
   </main>
 

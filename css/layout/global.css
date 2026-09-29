@@ -17,3 +17,100 @@ section {
     margin-inline: auto;
     /* background-color: red; */
 }
+
+
+.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+
+    min-height: 48px;
+    padding: 0.75rem 1.25rem;
+
+    border: 1px solid transparent;
+    border-radius: var(--radius-button);
+
+    font-family: var(--font-body);
+    font-size: var(--font-size-sm);
+    font-weight: var(--font-weight-semibold);
+    line-height: 1;
+
+    text-decoration: none;
+    white-space: nowrap;
+    cursor: pointer;
+
+    transition:
+        background-color var(--transition-base),
+        border-color var(--transition-base),
+        color var(--transition-base),
+        transform var(--transition-base),
+        box-shadow var(--transition-base);
+}
+.btn--primary {
+    background-color: var(--color-brand-dark);
+    color: var(--color-text-inverse);
+    border-color: var(--color-brand-dark);
+
+    box-shadow: var(--shadow-sm);
+}
+
+.btn--primary:hover {
+    background-color: var(--color-interactive-active);
+    border-color: var(--color-interactive-active);
+
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-md);
+}
+
+.btn--primary:active {
+    transform: translateY(0);
+    box-shadow: var(--shadow-sm);
+}
+
+.btn--secondary {
+    background-color: rgba(255, 255, 255, 0.85);
+    color: var(--color-text-primary);
+
+    border-color: rgba(255, 255, 255, 0.9);
+
+    box-shadow: var(--shadow-sm);
+}
+
+.btn__icon {
+    flex-shrink: 0;
+
+    transition: transform var(--transition-fast);
+}
+
+.btn:hover .btn__icon {
+    transform: translateX(4px);
+}
+
+.btn:focus-visible .btn__icon {
+    transform: translateX(4px);
+}
+.btn--secondary:hover {
+    background-color: var(--color-bg-main);
+    border-color: var(--color-bg-main);
+
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-md);
+}
+
+.btn--secondary:active {
+    transform: translateY(0);
+    box-shadow: var(--shadow-sm);
+}
+.btn:focus-visible {
+    outline: var(--focus-outline-width) solid
+        var(--color-interactive-focus);
+
+    outline-offset: var(--focus-outline-offset);
+}
+.btn:disabled,
+.btn[aria-disabled="true"] {
+    opacity: 0.55;
+    cursor: not-allowed;
+    pointer-events: none;
+} 

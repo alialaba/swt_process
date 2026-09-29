@@ -1,0 +1,169 @@
+.how-it-works {
+    position: relative;
+    padding-block: clamp(4rem, 8vw, 7.5rem);
+}
+
+.how-it-works__intro {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    flex-wrap: wrap;
+gap: 2em;
+    margin-bottom: clamp(1.5rem, 4vw, 3rem);
+}
+
+
+.how-it-works__content {
+    width: min(100%, 500px);
+}
+
+#how-it-works-title {
+    margin: 0;
+    font-family: var(--font-heading);
+    font-size: clamp(2rem, 4vw, 3.25rem);
+    line-height: var(--line-height-tight);
+    font-weight: var(--font-weight-semibold);
+    letter-spacing: var(--letter-spacing-tight);
+    color: var(--color-text-primary);
+    margin: 1rem 0 0;
+
+}
+
+.how-it-works__content p {
+    margin: 1rem 0 0;
+
+}
+
+.how-it-works__body {
+   display: flex;
+  align-items: center;
+  gap: clamp(2.5rem, 5vw, 5rem);
+
+}
+
+.how-it-works__list {
+  flex: 1 1 42%;
+  display: flex;
+  flex-direction: column;
+
+}
+.how-it-works__panel{
+    padding: 2em;
+     flex: 1 1 58%;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  background: rgba(40, 191, 218, 0.06);
+   display: flex;
+   align-items: center;
+   justify-content: center;
+  /* background: var(--color-brand-ink); */
+  /* box-shadow: 0 20px 48px rgba(33, 37, 41, 0.1); */
+}
+.how-it-works__image {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: var(--radius-lg);
+}
+ 
+.how-it-works__tab {
+    
+    display: flex;
+  align-items: center;
+  gap: 16px;
+  width: 100%;
+  text-align: left;
+  padding: 18px 20px;
+  border: none;
+  border-radius: var(--radius-md);
+  background: transparent;
+  cursor: pointer;
+  font-family: var(--font-body);
+  transition: background 200ms var(--ease);
+}
+.how-it-works__tab-icon {
+  flex: 0 0 auto;
+  width: 42px;
+  height: 42px;
+  border-radius: var(--radius-md);
+  padding: .5em;
+  /* background: var( --color-warning); */
+   /* Swap in real icons (SVG background or <img>) per tab — this is a
+     neutral placeholder so the layout is complete without them. */
+}  
+.how-it-works__tab-text {
+    display: inline-flex;
+    flex-direction: column;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start; 
+    min-width: 0;
+}
+.how-it-works__tab-title{
+    
+    font-family: var(--font-heading);
+
+     font-weight: 500;
+  font-size: 1.05rem;
+  color: var(--color-text-secondary);
+  transition: color 200ms var(--ease);
+}
+.how-it-works__tab-desc{
+ color: var(--color-text-muted);
+  font-size: 0.9rem;
+  line-height: 1.5;
+  margin-top: 6px;
+ 
+  /* Collapsed by default: clipped to zero height rather than display:none,
+     so the height/opacity transition has something to animate. Content
+     stays in the DOM either way — see the file header comment on why
+     that's a deliberate accessibility choice, not an oversight. */
+  max-height: 0;
+  opacity: 0;
+  overflow: hidden;
+  transition: max-height 300ms var(--ease), opacity 200ms var(--ease), margin-top 300ms var(--ease);
+}
+
+ 
+/* ==========================================================================
+   Active state
+   ========================================================================== */
+ 
+.how-it-works__tab.is-active {
+   background: rgba(40, 191, 218, 0.06);
+}
+.how-it-works__tab.is-active .how-it-works__tab-title {
+  color: var(--color-brand-ink);
+}
+.how-it-works__tab.is-active .how-it-works__tab-desc {
+  max-height: 200px; /* comfortably above any real description's rendered height */
+  opacity: 1;
+}
+.how-it-works__tab.is-active .how-it-works__tab-icon {
+  background: var(--color-brand-primary);
+}
+ 
+.how-it-works__tab:hover:not(.is-active) {
+  background: rgba(40, 191, 218, 0.06);
+}
+ 
+.how-it-works__tab:focus-visible {
+  outline: 2px solid var(--color-brand-primary);
+  outline-offset: 2px;
+}
+ 
+/* ==========================================================================
+   Responsive
+   ========================================================================== */
+ 
+@media (max-width: 900px) {
+  .how-it-works__body {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  .how-it-works__intro {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+}
+ 
