@@ -204,7 +204,27 @@
 
     </section>
 
-   <!--
+    <section class="quote-section" aria-label="Customer testimonial">
+  <div class="container">
+    <div class="quote-section__card">
+      <span class="quote-section__mark quote-section__mark--open" aria-hidden="true">&ldquo;</span>
+ 
+      <p class="quote-section__text">SweetProcess will help you upload your knowledge into your employees&rsquo; brains so they can grow your business.</p>
+ 
+      <span class="quote-section__mark quote-section__mark--close" aria-hidden="true">&rdquo;</span>
+ 
+      <div class="quote-section__divider"></div>
+ 
+      <div class="quote-section__author">
+        <img class="quote-section__avatar" src="https://www.sweetprocess.com/wp-content/themes/sweetprocess/theme-2020/images/testimony/andrew-warner.jpg" alt="" loading="lazy">
+        <span class="quote-section__name">Andrew Warner</span>
+        <span class="quote-section__sep" aria-hidden="true">|</span>
+        <span class="quote-section__role">Founder, Mixergy.com</span>
+      </div>
+    </div>
+  </div>
+</section>
+    <!--
   This is the ARIA "tabs" pattern: one shared panel, five tab buttons that
   each swap its content. Two accessibility details that matter here and
   need to be kept in sync by whatever JS drives the swap (I can write that
@@ -220,146 +240,230 @@
      that's no longer selected.
 -->
 
-<section class="how-it-works" id="how-it-works" aria-labelledby="how-it-works-title">
+    <section class="how-it-works" id="how-it-works" aria-labelledby="how-it-works-title">
+      <div class="container">
+
+        <div class="how-it-works__intro">
+          <div class="how-it-works__content">
+            <h2 id="how-it-works-title">How it works</h2>
+            <p id="">SweetProcess gives you the systemization you need to scale and grow your business.</p>
+          </div>
+          <a href="#live-demo" class="btn btn--primary">Live Demo</a>
+        </div>
+
+        <div class="how-it-works__body">
+
+          <div class="how-it-works__list" role="tablist" aria-orientation="vertical" aria-label="Product areas">
+
+            <button type="button" role="tab" class="how-it-works__tab is-active" id="tab-procedures"
+              aria-selected="true" tabindex="0" aria-controls="how-it-works-panel" data-panel="procedures">
+              <span class="how-it-works__tab-icon" aria-hidden="true">
+                <img src="./assests/icons8-procedures-100.png" alt="icons8-procedures-100" />
+              </span>
+              <span class="how-it-works__tab-text">
+                <span class="how-it-works__tab-title">Document Procedures</span>
+                <span class="how-it-works__tab-desc">
+                  Empower your team with all the information they need to do their job right. By documenting repetitive
+                  tasks in one place there's less emails and no more guesswork.
+                </span>
+              </span>
+            </button>
+
+            <button type="button" role="tab" class="how-it-works__tab" id="tab-policies" aria-selected="false"
+              tabindex="-1" aria-controls="how-it-works-panel" data-panel="policies">
+              <span class="how-it-works__tab-icon" aria-hidden="true">
+                <img src="./assests/icons8-policies-100.png" alt="policies" />
+              </span>
+              <span class="how-it-works__tab-text">
+                <span class="how-it-works__tab-title">Implement Policies</span>
+                <span class="how-it-works__tab-desc">
+                  SweetProcess helps you create, share and ensure correct adoption of your business's policies. Having
+                  the right policies in place is essential in maintaining standards and can help protect your business.
+                </span>
+              </span>
+            </button>
+
+            <button type="button" role="tab" class="how-it-works__tab" id="tab-processes" aria-selected="false"
+              tabindex="-1" aria-controls="how-it-works-panel" data-panel="processes">
+              <span class="how-it-works__tab-icon" aria-hidden="true">
+                <img src="./assests/icons8-sdlc-100.png" alt="processes icon" />
+              </span>
+              <span class="how-it-works__tab-text">
+                <span class="how-it-works__tab-title">Master Processes</span>
+                <span class="how-it-works__tab-desc">
+                  An organisation should always be looking to improve their processes. SweetProcess gives you the
+                  platform to craft, collaborate and refine processes so you can continue to grow your business.
+                </span>
+              </span>
+            </button>
+
+            <button type="button" role="tab" class="how-it-works__tab" id="tab-tasks" aria-selected="false"
+              tabindex="-1" aria-controls="how-it-works-panel" data-panel="tasks">
+              <span class="how-it-works__tab-icon" aria-hidden="true">
+                <img src="./assests/icons8-tasks-100.png" alt="task iocn" />
+              </span>
+              <span class="how-it-works__tab-text">
+                <span class="how-it-works__tab-title">Manage Tasks</span>
+                <span class="how-it-works__tab-desc">
+                  Did Matt finish the weekly email campaign? Which step is Julia up to in the client discovery process?
+                  Stay in the know as you track latest activity or look back in the history of any task or procedure.
+                </span>
+              </span>
+            </button>
+
+            <button type="button" role="tab" class="how-it-works__tab" id="tab-knowledge-base" aria-selected="false"
+              tabindex="-1" aria-controls="how-it-works-panel" data-panel="knowledge-base">
+              <span class="how-it-works__tab-icon" aria-hidden="true">
+                <img src="./assests/icons8-knowledge-100.png" alt="knowledge base" />
+              </span>
+              <span class="how-it-works__tab-text">
+                <span class="how-it-works__tab-title">Public or Private Knowledge Base</span>
+                <span class="how-it-works__tab-desc">
+                  Turn your existing procedures and policies into a beautiful knowledge base for your employees or
+                  clients. Your knowledge base comes built in with search, feedback forms, tracking and more!
+                </span>
+              </span>
+            </button>
+
+          </div>
+
+          <div class="how-it-works__panel" id="how-it-works-panel" role="tabpanel" aria-labelledby="tab-procedures"
+            tabindex="0">
+            <img class="how-it-works__image" id="how-it-works-image"
+              src="https://www.sweetprocess.com/wp-content/themes/sweetprocess/theme-2020/images/screenshots/procedure-page.png"
+              alt="SweetProcess procedure page screenshot" loading="lazy">
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <section class="features-section" id="features" aria-labelledby="features-title">
+      <div class="container">
+
+        <div class="features-grid__header">
+          <h2 id="features-title" class="section__headline">One plan with all the features</h2>
+          <p class="section__lead">We don't have confusing levels of membership – being all-inclusive means every
+            customer gets access to every feature.</p>
+        </div>
+
+        <div class="features-grid" data-features-grid>
+          <!-- Populated by features-grid.js from the FEATURES array -->
+        </div>
+
+      </div>
+    </section>
+
+<section class="quote-section" aria-label="Customer testimonial">
   <div class="container">
-
-    <div class="how-it-works__intro">
-      <div class="how-it-works__content">
-        <h2 id="how-it-works-title">How it works</h2>
-        <p id="">SweetProcess gives you the systemization you need to scale and grow your business.</p>
+    <div class="quote-section__card">
+      <span class="quote-section__mark quote-section__mark--open" aria-hidden="true">&ldquo;</span>
+ 
+      <p class="quote-section__text">SweetProcess allows me to create well-structured, visually-appealing procedures that I am proud to share with my teammates. Plus, it is super-easy to use.</p>
+ 
+      <span class="quote-section__mark quote-section__mark--close" aria-hidden="true">&rdquo;</span>
+ 
+      <div class="quote-section__divider"></div>
+ 
+      <div class="quote-section__author">
+        <img class="quote-section__avatar" src="https://www.sweetprocess.com/wp-content/themes/sweetprocess/theme-2020/images/testimony/michael-hyatt.jpg" alt="" loading="lazy">
+        <span class="quote-section__name">Michael Hyatt</span>
+        <span class="quote-section__sep" aria-hidden="true">|</span>
+        <span class="quote-section__role">NYTimes Best Selling Author</span>
       </div>
-      <a href="#live-demo" class="btn btn--primary">Live Demo</a>
     </div>
+  </div>
+</section>
 
-    <div class="how-it-works__body">
-
-      <div class="how-it-works__list" role="tablist" aria-orientation="vertical" aria-label="Product areas">
-
-        <button
-          type="button"
-          role="tab"
-          class="how-it-works__tab is-active"
-          id="tab-procedures"
-          aria-selected="true"
-          tabindex="0"
-          aria-controls="how-it-works-panel"
-          data-panel="procedures"
-        >
-          <span class="how-it-works__tab-icon" aria-hidden="true">
-            <img src="./assests/icons8-procedures-100.png" alt="icons8-procedures-100"/>
-          </span>
-          <span class="how-it-works__tab-text">
-            <span class="how-it-works__tab-title">Document Procedures</span>
-            <span class="how-it-works__tab-desc">
-              Empower your team with all the information they need to do their job right. By documenting repetitive tasks in one place there's less emails and no more guesswork.
-            </span>
-          </span>
-        </button>
-
-        <button
-          type="button"
-          role="tab"
-          class="how-it-works__tab"
-          id="tab-policies"
-          aria-selected="false"
-          tabindex="-1"
-          aria-controls="how-it-works-panel"
-          data-panel="policies"
-        >
-          <span class="how-it-works__tab-icon" aria-hidden="true">
-            <img src="./assests/icons8-policies-100.png" alt="policies"/>
-          </span>
-          <span class="how-it-works__tab-text">
-            <span class="how-it-works__tab-title">Implement Policies</span>
-            <span class="how-it-works__tab-desc">
-              SweetProcess helps you create, share and ensure correct adoption of your business's policies. Having the right policies in place is essential in maintaining standards and can help protect your business.
-            </span>
-          </span>
-        </button>
-
-        <button
-          type="button"
-          role="tab"
-          class="how-it-works__tab"
-          id="tab-processes"
-          aria-selected="false"
-          tabindex="-1"
-          aria-controls="how-it-works-panel"
-          data-panel="processes"
-        >
-          <span class="how-it-works__tab-icon" aria-hidden="true">
-            <img  src="./assests/icons8-sdlc-100.png" alt="processes icon"/>
-          </span>
-          <span class="how-it-works__tab-text">
-            <span class="how-it-works__tab-title">Master Processes</span>
-            <span class="how-it-works__tab-desc">
-              An organisation should always be looking to improve their processes. SweetProcess gives you the platform to craft, collaborate and refine processes so you can continue to grow your business.
-            </span>
-          </span>
-        </button>
-
-        <button
-          type="button"
-          role="tab"
-          class="how-it-works__tab"
-          id="tab-tasks"
-          aria-selected="false"
-          tabindex="-1"
-          aria-controls="how-it-works-panel"
-          data-panel="tasks"
-        >
-          <span class="how-it-works__tab-icon" aria-hidden="true">
-            <img src="./assests/icons8-tasks-100.png" alt="task iocn" />
-          </span>
-          <span class="how-it-works__tab-text">
-            <span class="how-it-works__tab-title">Manage Tasks</span>
-            <span class="how-it-works__tab-desc">
-              Did Matt finish the weekly email campaign? Which step is Julia up to in the client discovery process? Stay in the know as you track latest activity or look back in the history of any task or procedure.
-            </span>
-          </span>
-        </button>
-
-        <button
-          type="button"
-          role="tab"
-          class="how-it-works__tab"
-          id="tab-knowledge-base"
-          aria-selected="false"
-          tabindex="-1"
-          aria-controls="how-it-works-panel"
-          data-panel="knowledge-base"
-        >
-          <span class="how-it-works__tab-icon" aria-hidden="true">
-            <img src="./assests/icons8-knowledge-100.png" alt="knowledge base"/>
-          </span>
-          <span class="how-it-works__tab-text">
-            <span class="how-it-works__tab-title">Public or Private Knowledge Base</span>
-            <span class="how-it-works__tab-desc">
-              Turn your existing procedures and policies into a beautiful knowledge base for your employees or clients. Your knowledge base comes built in with search, feedback forms, tracking and more!
-            </span>
-          </span>
-        </button>
-
-      </div>
-
-      <div
-        class="how-it-works__panel"
-        id="how-it-works-panel"
-        role="tabpanel"
-        aria-labelledby="tab-procedures"
-        tabindex="0"
-      >
-        <img
-          class="how-it-works__image"
-          id="how-it-works-image"
-          src="https://www.sweetprocess.com/wp-content/themes/sweetprocess/theme-2020/images/screenshots/procedure-page.png"
-          alt="SweetProcess procedure page screenshot"
-          loading="lazy"
-        >
-      </div>
-
-    </div>
-
+<section class="faq" aria-labelledby="faq-title">
+  <div class="container">
+    <h2 id="faq-title" class="faq__title">Questions?</h2>
+ 
+    <ul class="faq__list">
+ 
+      <li class="faq__item">
+        <h3 class="faq__question-heading">
+          <button type="button" class="faq__question" aria-expanded="false" aria-controls="faq-answer-1" id="faq-question-1">
+            <span>How does the free trial work?</span>
+            <svg class="faq__icon" width="16" height="16" viewBox="0 0 16 16" aria-hidden="true">
+              <path d="M3 6L8 11L13 6" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+            </svg>
+          </button>
+        </h3>
+        <div class="faq__answer-wrap" id="faq-answer-1" role="region" aria-labelledby="faq-question-1">
+          <div class="faq__answer-inner">
+            <p>Sign up to start using SweetProcess for free for 14 days. At the end of your 14-day free trial, you can continue using SweetProcess by choosing your plan and entering your billing information. You can cancel at any time before or after your free trial.</p>
+          </div>
+        </div>
+      </li>
+ 
+      <li class="faq__item">
+        <h3 class="faq__question-heading">
+          <button type="button" class="faq__question" aria-expanded="false" aria-controls="faq-answer-2" id="faq-question-2">
+            <span>Is my information secure?</span>
+            <svg class="faq__icon" width="16" height="16" viewBox="0 0 16 16" aria-hidden="true">
+              <path d="M3 6L8 11L13 6" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+            </svg>
+          </button>
+        </h3>
+        <div class="faq__answer-wrap" id="faq-answer-2" role="region" aria-labelledby="faq-question-2">
+          <div class="faq__answer-inner">
+            <p>Absolutely. All of your data is encrypted using the same SSL technology that banks use to protect your money online. We also encrypt your data at rest in the database. You have complete control over who can access your procedures, processes and policies.</p>
+          </div>
+        </div>
+      </li>
+ 
+      <li class="faq__item">
+        <h3 class="faq__question-heading">
+          <button type="button" class="faq__question" aria-expanded="false" aria-controls="faq-answer-3" id="faq-question-3">
+            <span>I already have my SOPs documented elsewhere. Can you import them to SweetProcess?</span>
+            <svg class="faq__icon" width="16" height="16" viewBox="0 0 16 16" aria-hidden="true">
+              <path d="M3 6L8 11L13 6" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+            </svg>
+          </button>
+        </h3>
+        <div class="faq__answer-wrap" id="faq-answer-3" role="region" aria-labelledby="faq-question-3">
+          <div class="faq__answer-inner">
+            <p>We sure can! As an optional service, we can handle the workload of migrating all of your existing SOPs into your new SweetProcess account.</p>
+            <p><a href="#migration-service">Learn more about our Migration Service</a>. We also have a Microsoft Word import tool that you can use yourself.</p>
+          </div>
+        </div>
+      </li>
+ 
+      <li class="faq__item">
+        <h3 class="faq__question-heading">
+          <button type="button" class="faq__question" aria-expanded="false" aria-controls="faq-answer-4" id="faq-question-4">
+            <span>Do I need to install any software?</span>
+            <svg class="faq__icon" width="16" height="16" viewBox="0 0 16 16" aria-hidden="true">
+              <path d="M3 6L8 11L13 6" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+            </svg>
+          </button>
+        </h3>
+        <div class="faq__answer-wrap" id="faq-answer-4" role="region" aria-labelledby="faq-question-4">
+          <div class="faq__answer-inner">
+            <p>Nope. SweetProcess is completely web-based, so all of your standard operating procedures are stored in the cloud and accessible from anywhere.</p>
+          </div>
+        </div>
+      </li>
+ 
+      <li class="faq__item">
+        <h3 class="faq__question-heading">
+          <button type="button" class="faq__question" aria-expanded="false" aria-controls="faq-answer-5" id="faq-question-5">
+            <span>What if I have more questions?</span>
+            <svg class="faq__icon" width="16" height="16" viewBox="0 0 16 16" aria-hidden="true">
+              <path d="M3 6L8 11L13 6" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+            </svg>
+          </button>
+        </h3>
+        <div class="faq__answer-wrap" id="faq-answer-5" role="region" aria-labelledby="faq-question-5">
+          <div class="faq__answer-inner">
+            <p>We&rsquo;re here to help! Email us anytime at <a href="mailto:support@sweetprocess.com">support@sweetprocess.com</a> or call our phone number +1 (800) 476-0732 to talk to us.</p>
+          </div>
+        </div>
+      </li>
+ 
+    </ul>
   </div>
 </section>
 

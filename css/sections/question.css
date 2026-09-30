@@ -1,0 +1,126 @@
+
+
+.faq {
+  padding-block: var(--section-padding-y-lg, 6rem);
+}
+
+.faq__title {
+  font-family: var(--font-heading);
+  font-weight: 700;
+  font-size: clamp(1.6rem, 2.6vw, 2.1rem);
+  text-align: center;
+  margin: 0 0 2.5rem;
+}
+
+.faq__list {
+  list-style: none;
+  margin: 0 auto;
+  padding: 0;
+  max-width: 720px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.faq__item {
+  border: 1px solid #ced4da;
+  border-radius: var(--radius-lg);
+  background: #fff;
+  overflow: hidden; /* keeps the answer's rounded-corner clipping clean while open */
+}
+
+.faq__question-heading {
+  margin: 0;
+}
+
+.faq__question {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  text-align: left;
+  padding: 20px 24px;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  font-family: var(--font-body);
+  font-weight: 500;
+  font-size: 1rem;
+  color: var(--color-text-secondary);
+  transition: color 200ms cubic-bezier(0.4, 0, 0.2, 1), background-color 200ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.faq__question:hover {
+  background-color: #f8f9fa;
+}
+
+.faq__question:focus-visible {
+  outline: 2px solid var(--color-brand-primary);
+  outline-offset: -2px;
+}
+
+.faq__icon {
+  flex: 0 0 auto;
+  color: var(--color-text-muted);
+  transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1), color 200ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* ==========================================================================
+   Open state — driven purely by aria-expanded, no separate JS-managed
+   class needed for the visual state (keeps one source of truth).
+   ========================================================================== */
+
+.faq__question[aria-expanded="true"] {
+  color: var(--color-brand-ink);
+  font-weight: 600;
+}
+.faq__question[aria-expanded="true"] .faq__icon {
+  transform: rotate(180deg);
+  color: var(--color-brand-primary);
+}
+
+/* ==========================================================================
+   The animation itself — CSS Grid 0fr/1fr technique. No JS height
+   measurement, no scrollHeight snapping: the browser interpolates to
+   whatever the content's real height turns out to be, so it stays smooth
+   even if text reflows later (translation, font swap, viewport resize).
+   ========================================================================== */
+
+.faq__answer-wrap {
+  display: grid;
+  grid-template-rows: 0fr;
+  transition: grid-template-rows 300ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+.faq__answer-wrap.is-open {
+  grid-template-rows: 1fr;
+}
+
+.faq__answer-inner {
+  overflow: hidden;
+  min-height: 0;
+}
+.faq__answer-inner p {
+  margin: 0 0 12px;
+  padding: 0 24px 20px;
+  color: var(--color-text-muted);
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+.faq__answer-inner p:first-child {
+  padding-top: 4px;
+}
+.faq__answer-inner p:last-child {
+  margin-bottom: 0;
+}
+.faq__answer-inner a {
+  color: var(--color-brand-primary);
+  text-decoration: underline;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .faq__answer-wrap,
+  .faq__icon {
+    transition: none;
+  }
+}
