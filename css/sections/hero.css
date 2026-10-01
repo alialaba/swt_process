@@ -3,16 +3,13 @@
     min-height: 100vh;
     overflow: hidden;
 
-    background: var(--color-bg-hero);
+    background: radial-gradient(ellipse 900px 700px at 85% -10%, rgba(40, 191, 218, 0.16), transparent 60%),
+    #005f6b;
 
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
     padding-block: clamp(5rem, 10vw, 8rem);
-/* 
-    padding-block:
-        clamp(5rem, 10vh, 7rem)
-        clamp(2rem, 5vh, 3.5rem); */
 }
 
 .hero__inner {
@@ -35,7 +32,7 @@
 
     margin: 0;
 
-    color: var(--color-text-primary);
+    color: var(  --color-bg-main);
 
     font-family: var(--font-heading);
     font-size: var(--font-size-hero);
@@ -49,22 +46,262 @@
 
     margin-top: clamp(1.25rem, 2vw, 1.5rem);
 
-    color: var(--color-text-secondary);
+   color: rgba(255, 255, 255, 0.78);
 
     font-size: clamp(1rem, 1.5vw, 1.125rem);
     line-height: var(--line-height-relaxed);
 }
 
-.hero__actions {
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-
-    gap: 0.75rem;
-
-    margin-top: clamp(1.5rem, 3vw, 2rem);
+.hero__capture {
+  margin-top: clamp(1.5rem, 3vw, 2rem);
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
 }
-
+ 
+/* --- Email form, color-matched to brand --- */
+ 
+.email-form-wrapper {
+  position: relative;
+  width: 100%;
+  max-width: 343px;
+}
+ 
+.email-form {
+  display: flex;
+  width: 100%;
+  align-items: center;
+  gap: 8px;
+  padding: 4px;
+  border-radius: 9999px;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  background-color: rgba(255, 255, 255, 0.05);
+  box-shadow: 0 4px 20px 0 rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(50px);
+  -webkit-backdrop-filter: blur(50px);
+  transition: border-color 150ms ease-out;
+}
+ 
+.email-form:focus-within {
+  border-color: rgba(255, 255, 255, 0.3);
+}
+ 
+.email-input {
+  min-width: 0;
+  flex: 1;
+  align-self: stretch;
+  background: transparent;
+  padding: 0 16px;
+  font-size: 14px;
+  line-height: 20px;
+  /* Flipped from the original dark gray (#1f2937) — that was designed
+     for a light/opaque field, and would be very hard to read on this
+     frosted-glass-over-dark-teal background. */
+  color: #ffffff;
+  border: none;
+  outline: none;
+}
+ 
+.email-input::placeholder {
+  color: rgba(255, 255, 255, 0.55);
+}
+ 
+.submit-button {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  gap: 4px;
+  padding: 4px 16px;
+  font-size: 14px;
+  line-height: 20px;
+  font-weight: 600;
+  color: var(--color-brand-teal-900);
+  border: none;
+  border-radius: 9999px;
+  outline: none;
+  cursor: pointer;
+  user-select: none;
+  white-space: nowrap;
+  /* Swapped from a neutral gray gradient to brand cyan, so the CTA reads
+     as on-brand rather than a generic OS-style button. */
+  background: linear-gradient(to bottom, #5fd4e8, var(--color-brand-primary));
+  box-shadow:
+    0px 1px 1px 0px rgba(0, 0, 0, 0.15),
+    0px 2px 10px 0px rgba(0, 0, 0, 0.2),
+    inset 0px 1px 2px 0px rgba(255, 255, 255, 0.4),
+    inset 0px -1px 1px 0px rgba(0, 0, 0, 0.08);
+  isolation: isolate;
+  transition: transform 150ms ease-out, opacity 150ms ease-out;
+}
+ 
+.submit-button::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: -10;
+  border-radius: 9999px;
+  background-color: #5fd4e8;
+  box-shadow:
+    inset 0px 1px 2px 0px rgba(255, 255, 255, 0.4),
+    inset 0px -1px 1px 0px rgba(0, 0, 0, 0.08);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 300ms ease-out;
+}
+ 
+.submit-button:hover::after {
+  opacity: 1;
+}
+ 
+.submit-button:active {
+  transform: translateY(1px);
+}
+ 
+.submit-button:focus-visible {
+  /* Was #3b82f6 — not a color in this palette at all. Swapped to brand cyan. */
+  box-shadow: 0 0 0 2px var(--color-brand-primary);
+}
+ 
+.submit-button:disabled {
+  pointer-events: none;
+  opacity: 0.5;
+}
+ 
+.error-message {
+  position: absolute;
+  top: 100%;
+  left: 16px;
+  margin-top: 6px;
+  font-size: 12px;
+  color: #ff8a8a; /* lightened from #ef4444 so it stays legible on dark teal */
+  opacity: 0;
+  transition: opacity 150ms ease-out;
+}
+ 
+@media (max-width: 1024px) {
+  .email-input,
+  .submit-button {
+    min-height: 44px;
+  }
+}
+ 
+/* --- Trust row --- */
+ 
+.hero__trust-row {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+ 
+.hero__trust-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 13px;
+  line-height: 1.4;
+  color: rgba(255, 255, 255, 0.65);
+}
+.hero__trust-item:not(:last-child) {
+  padding-right: 20px;
+  border-right: 1px solid rgba(255, 255, 255, 0.18);
+}
+.hero__trust-item strong {
+  display: block;
+  color: #fff;
+  font-weight: 600;
+  font-size: 13.5px;
+}
+.hero__trust-icon {
+  flex: 0 0 auto;
+  color: rgba(255, 255, 255, 0.6);
+}
+ 
+/* ==========================================================================
+   Video — aspect-ratio fix. The previous version used a clamp()-based
+   fixed height that didn't match Wistia's actual embed proportions, so
+   the player's own content shrank/letterboxed to fit the mismatched box.
+   aspect-ratio keeps the container's proportions correct at any width.
+   ========================================================================== */
+ 
+.section--headline-video__video-col {
+  flex: 0 0 clamp(420px, 42vw, 560px);
+  width: 100%;
+}
+ 
+.section__video {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  overflow: hidden;
+  border-radius: var(--radius-panel);
+  background: var(--color-brand-deep, #003840);
+  box-shadow: var(--shadow-xl);
+}
+ 
+.section__video iframe {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  display: block;
+  border: 0;
+}
+ 
+/* ==========================================================================
+   Responsive
+   ========================================================================== */
+ 
+@media (max-width: 995px) {
+  .hero {
+    min-height: auto;
+    justify-content: flex-start;
+  }
+ 
+  .hero__inner {
+    flex-direction: column;
+    align-items: stretch;
+    gap: clamp(3rem, 7vw, 5rem);
+  }
+ 
+  .hero__content {
+    max-width: 700px;
+  }
+ 
+  .hero__title {
+    max-width: 14ch;
+  }
+ 
+  .section--headline-video__video-col {
+    width: 100%;
+    max-width: 430px;
+    margin-inline: auto;
+  }
+ 
+  /* aspect-ratio already handles sizing — no extra rule needed here */
+}
+ 
+@media (max-width: 425px) {
+  .hero__inner {
+    margin-top: -2.5em;
+  }
+ 
+  .email-form-wrapper {
+    max-width: 100%;
+  }
+ 
+  .hero__trust-row {
+    gap: 14px;
+  }
+  .hero__trust-item:not(:last-child) {
+    padding-right: 14px;
+  }
+}
 .section--headline-video__video-col {
   flex: 0 0 clamp(420px, 42vw, 560px);
   width: 100%;

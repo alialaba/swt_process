@@ -20,4 +20,11 @@ button:focus-visible {
   .proof__quote {
     transition: none;
   }
+
+  .email-form,
+  .submit-button,
+  .submit-button::after,
+  .error-message {
+    transition: none;
+  }
 }
