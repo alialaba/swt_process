@@ -167,6 +167,7 @@
 }
 .site-header.is-scrolled .site-nav__demo:hover {
   background: var(--color-brand-soft);
+    color: var(--color-text-brand);
 }
 
 /* Login */
@@ -233,6 +234,10 @@
   background: var(--color-text-primary); /* flipped back to dark */
 }
 
+.site-header.is-scrolled .site-nav__logo span:nth-child(2){
+color: #28bfda;
+}
+
 .site-menu__toggle span:nth-child(1) { top: 17px; }
 .site-menu__toggle span:nth-child(2) { top: 27px; }
 
@@ -245,6 +250,19 @@
   top: 22px;
   transform: rotate(-45deg);
 }
+
+.site-header.is-menu-open .site-menu__toggle span {
+  background: var(--color-text-primary); /* flipped back to dark */
+}
+
+.site-header.is-menu-open .site-nav__demo {
+  background: var(--color-text-primary); /* flipped back to dark */
+}
+
+.site-header.is-menu-open .site-nav__logo span:nth-child(2){
+color: #28bfda;
+}
+
 
 /* overlay covers the viewport — this is always a solid white panel
    regardless of header state, so its own text colors were already
@@ -347,7 +365,7 @@
   .site-header { width: 100%; }
   .site-nav {
     min-height: 72px;
-    padding: 12px 20px;
+    /* padding: 12px 20px; */
   }
   .site-nav__right { gap: 8px; }
   .site-nav__demo { padding: 8px; }
