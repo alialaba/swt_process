@@ -19,7 +19,7 @@
   margin: 0;
 
   font-family: var(--font-heading);
-  font-size: clamp(.9rem, 3vw, 1.2rem);
+  font-size: clamp(1.2rem, 3vw, 1.6rem);
   font-weight: 500;
   line-height: var(--line-height-tight);
   letter-spacing: var(--letter-spacing-tight);
