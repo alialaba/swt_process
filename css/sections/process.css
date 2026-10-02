@@ -1,6 +1,9 @@
 .process-showcase{
     position: relative;
     padding-block: clamp(4rem, 8vw, 7.5rem);
+    background:
+    radial-gradient(ellipse 800px 500px at 50% -10%, rgba(40,191,218,.14), transparent 65%),
+    #f2f8f8;
 }
 
  .process-showcase__intro {

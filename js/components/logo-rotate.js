@@ -6,16 +6,42 @@
   const logos  = [...wrap.querySelectorAll('img')];
   const mobile = matchMedia('(max-width: 600px)');
   const reduce = matchMedia('(prefers-reduced-motion: reduce)');
-  const SWAP_EVERY = 1800;   // ms between swaps (one slot at a time)
+  const SWAP_EVERY = 1800;
+  const LEAVE_MS   = 750;   // a bit longer than the CSS transition (700ms)
 
   let timer, slots, hidden;
 
-  function build() {
-    clearInterval(timer);
-    const count = mobile.matches ? 4 : 3;       // visible slots
+  // Make sure every logo is loaded before it is ever shown
+  logos.forEach(img => {
+    img.removeAttribute('loading');
+    img.removeAttribute('data-ll-status');
+    const pre = new Image();
+    pre.src = img.currentSrc || img.src;
+  });
 
+  function resetLogo(img) {
+    clearTimeout(img._t);                       // cancel any pending cleanup
+    img.classList.remove('is-active', 'is-leaving');
+  }
+
+  function stop() {
+    clearInterval(timer);
+    timer = null;
+  }
+
+  function start(count) {
+    stop();
+    if (reduce.matches) return;
+    let i = 0;
+    timer = setInterval(() => swap(slots[i++ % count]), SWAP_EVERY);
+  }
+
+  function build() {
+    stop();
+    const count = mobile.matches ? 4 : 3;
+
+    logos.forEach(resetLogo);
     wrap.replaceChildren();
-    logos.forEach(l => l.classList.remove('is-active', 'is-leaving'));
 
     slots = Array.from({ length: count }, () => {
       const s = document.createElement('div');
@@ -29,13 +55,9 @@
       slot.append(logos[i]);
     });
 
-    hidden = logos.slice(count);                // logos waiting off-screen
+    hidden = logos.slice(count);
     wrap.classList.add('is-enhanced');
-
-    if (!reduce.matches) {
-      let i = 0;
-      timer = setInterval(() => swap(slots[i++ % count]), SWAP_EVERY);
-    }
+    start(count);
   }
 
   function swap(slot) {
@@ -43,19 +65,32 @@
     const incoming = hidden.shift();
     if (!outgoing || !incoming) return;
 
+    // 1. Reset the incoming logo completely before reusing it
+    resetLogo(incoming);
     slot.append(incoming);
     incoming.getBoundingClientRect();           // force reflow so the transition runs
-    incoming.classList.add('is-active');        // slides up from below
+    incoming.classList.add('is-active');
 
-    outgoing.classList.replace('is-active', 'is-leaving');   // slides out upward
-    outgoing.addEventListener('transitionend', () => {
-      outgoing.classList.remove('is-leaving');
-      outgoing.remove();
-    }, { once: true });
+    // 2. Animate the outgoing logo out
+    outgoing.classList.remove('is-active');
+    outgoing.classList.add('is-leaving');
+    hidden.push(outgoing);
 
-    hidden.push(outgoing);                      // goes to the back of the queue
+    // 3. Safe cleanup: only runs if it is still leaving and not reused
+    outgoing._t = setTimeout(() => {
+      if (outgoing.classList.contains('is-leaving')) {
+        outgoing.classList.remove('is-leaving');
+        outgoing.remove();
+      }
+    }, LEAVE_MS);
   }
 
+  // Pause when the tab is hidden, resume when visible
+  document.addEventListener('visibilitychange', () => {
+    if (document.hidden) stop();
+    else if (slots) start(slots.length);
+  });
+
   build();
-  mobile.addEventListener('change', build);     // rebuild when crossing the breakpoint
+  mobile.addEventListener('change', build);
 })();

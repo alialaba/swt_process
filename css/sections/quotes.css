@@ -1,7 +1,8 @@
 
 
 .quote-section {
-  padding-block: var(--section-padding-y-lg, 5rem);
+padding-block: clamp(2.5rem, 5vw, 3.5rem);
+  background-color: #fafafa;
 }
 
 .quote-section__card {

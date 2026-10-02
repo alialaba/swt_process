@@ -4,8 +4,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>SweetProcess</title>
-
+ <title>SweetProcess · Document Your Standard Operating Procedures With Ease</title>
+  <link rel="icon" type="image/x-icon" href="/assests/logo.min.svg">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link
@@ -221,6 +221,20 @@
       </div>
 
     </section>
+        <section class="process-showcase" id="processes" aria-labelledby="process-showcase-title">
+      <div class="container">
+
+
+        <div class="process-showcase__intro">
+
+          <h2>Process</h2>
+          <p>SweetProcess gives you the systemization you need to scale and grow your business. </p>
+        </div>
+
+        <div class="process-showcase__list" data-process-list></div>
+      </div>
+
+    </section>
     <section id="as-featured-as" class="as-featured-as">
       <div class="container">
         <div class="as-featured-as__intro ">
@@ -244,20 +258,7 @@
         </div>
       </div>
     </section>
-    <section class="process-showcase" id="processes" aria-labelledby="process-showcase-title">
-      <div class="container">
 
-
-        <div class="process-showcase__intro">
-
-          <h2>Process</h2>
-          <p>SweetProcess gives you the systemization you need to scale and grow your business. </p>
-        </div>
-
-        <div class="process-showcase__list" data-process-list></div>
-      </div>
-
-    </section>
     <section id="happy-customers" class="customers" aria-labelledby="customers-title">
   <div class="container">
     <h2 id="customers-title" class="section__headline">Customers Success Stories</h2>
@@ -455,6 +456,108 @@
 
       </div>
     </section>
+    <section class="section section--price" id="pricing">
+  <div class="container">
+    <p class="eyebrow">PRICING</p>
+    <h2>Ready to get started?</h2>
+    <p class="sub">Join the over 40,000 companies who have said 'Yes' to SweetProcess.</p>
+
+    <div class="price-toggle" role="group" aria-label="Billing interval">
+      <span class="price-toggle__thumb" aria-hidden="true"></span>
+      <button type="button" class="price-toggle__btn is-active" data-interval="monthly" aria-pressed="true">Monthly</button>
+      <button type="button" class="price-toggle__btn" data-interval="yearly" aria-pressed="false">
+        Yearly <span class="price-toggle__save">Save 16%</span>
+      </button>
+    </div>
+
+    <div class="price-banner">
+      <span>🇳🇬 Looks like you're in Nigeria: <b>80% regional discount</b> available.</span>
+      <a href="">Activate 80% off</a>
+    </div>
+
+    <div class="price-box monthly" id="price-box" aria-live="polite">
+
+      <!-- Card 1: featured -->
+      <article class="price-card price-card--featured">
+        <span class="price-card__tag">Most popular</span>
+        <h3>Team plan</h3>
+        <p class="price-card__for">For a team with up to 10 members</p>
+        <div class="price-card__price">
+          <span class="price-card__currency">$</span>
+          <span class="price-card__number">
+            <span class="yearly">82<small>.50</small></span>
+            <span class="monthly">99</span>
+          </span>
+          <span class="price-card__period">/ month</span>
+        </div>
+        <p class="price-card__billed yearly">Billed yearly</p>
+        <p class="price-card__billed monthly">Billed monthly</p>
+        <ul class="price-card__list">
+          <li>Up to 10 team members</li>
+          <li>Feature two</li>
+          <li>Feature three</li>
+          <li>Feature four</li>
+        </ul>
+        <a class="btn btn--primary" href="#signup">Start free trial</a>
+      </article>
+
+      <!-- Card 2 -->
+      <article class="price-card">
+        <h3>Extra members</h3>
+        <p class="price-card__for">For each additional member</p>
+        <div class="price-card__price">
+          <span class="price-card__currency">$</span>
+          <span class="price-card__number">
+            <span class="yearly">4<small>.17</small></span>
+            <span class="monthly">5</span>
+          </span>
+          <span class="price-card__period">/ month</span>
+        </div>
+        <p class="price-card__billed yearly">Billed yearly</p>
+        <p class="price-card__billed monthly">Billed monthly</p>
+        <ul class="price-card__list">
+          <li>Add anyone, anytime</li>
+          <li>Same features as the Team plan</li>
+          <li>Pay only for what you use</li>
+        </ul>
+        <a class="btn" href="#signup">Add to my plan</a>
+      </article>
+
+      <!-- Card 3 -->
+      <article class="price-card">
+        <h3>Small teams</h3>
+        <p class="price-card__for">Fewer than 10 employees?</p>
+        <div class="price-card__price">
+          <span class="price-card__currency">$</span>
+          <span class="price-card__number">0</span>
+          <span class="price-card__period">/ 14 days</span>
+        </div>
+        <p class="price-card__billed">No credit card needed</p>
+        <ul class="price-card__list">
+          <li>Full access during the trial</li>
+          <li>Exclusive pricing for smaller teams</li>
+          <li>Cancel anytime</li>
+        </ul>
+        <a class="btn" href="#signup">Start free trial</a>
+      </article>
+    </div>
+
+    <ul class="trust-row">
+      <li>
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l7 3v5c0 4.5-3 8-7 10-4-2-7-5.5-7-10V6l7-3z"/><path d="M9 12l2 2 4-4"/></svg>
+        <span><strong>30-day money-back</strong>No questions asked</span>
+      </li>
+      <li>
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>
+        <span><strong>Cancel anytime</strong>No commitments</span>
+      </li>
+      <li>
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 005 5L15 13l5 2v4a2 2 0 01-2 2A16 16 0 013 6a2 2 0 012-2z"/></svg>
+        <span><strong>Free 1-hour call</strong>Strategy session if you're refunded</span>
+      </li>
+    </ul>
+  </div>
+</section>
 
     <section class="quote-section" aria-label="Customer testimonial">
       <div class="container">

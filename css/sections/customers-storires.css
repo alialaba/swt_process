@@ -1,5 +1,6 @@
 .customers {
   padding-block: var(--section-padding-y-lg, 6rem);
+    background-color: #fafafa;
 }
 
 .customers .section__headline {
@@ -241,6 +242,11 @@
     right: 20px;
     flex-direction: row;
   }
+
+  .customers-card__author {
+  
+  text-align: left;
+}
 }
 
 @media (prefers-reduced-motion: reduce) {
