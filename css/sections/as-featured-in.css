@@ -1,7 +1,6 @@
 .as-featured-as {
   padding-block: clamp(2.5rem, 5vw, 3.5rem);
-  background-color: #fff;
-  
+  background-color: #fff;  
 }
 
 
@@ -14,17 +13,20 @@
   text-align: center;
 }
 
-
 .as-featured-as__title {
   margin: 0;
-
   font-family: var(--font-heading);
-  font-size: clamp(1.2rem, 3vw, 1.6rem);
-  font-weight: 500;
+ text-transform: uppercase;
+    color: #005f6b;
+  /* font-weight: 500;
   line-height: var(--line-height-tight);
   letter-spacing: var(--letter-spacing-tight);
+  color: var(--color-text-primary); */
 
-  color: var(--color-text-primary);
+   margin: 0 0 clamp(.75rem, 2vw, 1.25rem);
+    font-size: clamp(1rem, .7rem + .25vw, 2.5rem);
+    font-weight: 700;
+    letter-spacing: .16em;
 }
 
 

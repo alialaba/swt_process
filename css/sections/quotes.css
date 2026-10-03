@@ -2,7 +2,7 @@
 
 .quote-section {
 padding-block: clamp(2.5rem, 5vw, 3.5rem);
-  background-color: #fafafa;
+  background-color: var(  --color-bg-main);
 }
 
 .quote-section__card {

@@ -1,6 +1,9 @@
 .how-it-works {
     position: relative;
     padding-block: clamp(4rem, 8vw, 7.5rem);
+
+    --hiw-ease: cubic-bezier(0.22, 1, 0.36, 1);
+    background: var(--color-bg-section-alt);
 }
 
 .how-it-works__intro {
@@ -35,10 +38,9 @@ gap: 2em;
 }
 
 .how-it-works__body {
-   display: flex;
-  align-items: center;
+  display: flex;
+  align-items: flex-start;      /* was center: the panel no longer bobs as the list height changes */
   gap: clamp(2.5rem, 5vw, 5rem);
-
 }
 
 .how-it-works__list {
@@ -47,23 +49,37 @@ gap: 2em;
   flex-direction: column;
 
 }
-.how-it-works__panel{
-    padding: 2em;
-     flex: 1 1 58%;
+.how-it-works__panel {
+  flex: 1 1 58%;
+  display: grid;                /* all images share one cell */
+  place-items: center;
+  padding: 2em;
   border-radius: var(--radius-lg);
   overflow: hidden;
   background: rgba(40, 191, 218, 0.06);
-   display: flex;
-   align-items: center;
-   justify-content: center;
-  /* background: var(--color-brand-ink); */
-  /* box-shadow: 0 20px 48px rgba(33, 37, 41, 0.1); */
 }
 .how-it-works__image {
+  grid-area: 1 / 1;
   display: block;
   width: 100%;
   height: auto;
-  border-radius: var(--radius-lg);
+  border-radius: var(--radius-sm);
+  opacity: 0;
+  transform: translateY(14px) scale(0.985);
+  pointer-events: none;
+  /* outgoing: quick fade so it clears before the new one arrives */
+  transition: opacity 220ms ease, transform 220ms ease;
+}
+
+.how-it-works__image.is-visible {
+  z-index: 1;
+  opacity: 1;
+  transform: none;
+  pointer-events: auto;
+  /* incoming: slight delay avoids a muddy double-exposure */
+  transition:
+    opacity 550ms var(--hiw-ease) 120ms,
+    transform 650ms var(--hiw-ease) 120ms;
 }
  
 .how-it-works__tab {
@@ -79,7 +95,7 @@ gap: 2em;
   background: transparent;
   cursor: pointer;
   font-family: var(--font-body);
-  transition: background 200ms var(--ease);
+  transition: background-color 300ms var(--hiw-ease);
 }
 .how-it-works__tab-icon {
   flex: 0 0 auto;
@@ -87,6 +103,7 @@ gap: 2em;
   height: 42px;
   border-radius: var(--radius-md);
   padding: .5em;
+    transition: background-color 300ms var(--hiw-ease), transform 400ms var(--hiw-ease);
   /* background: var( --color-warning); */
    /* Swap in real icons (SVG background or <img>) per tab — this is a
      neutral placeholder so the layout is complete without them. */
@@ -106,25 +123,32 @@ gap: 2em;
      font-weight: 500;
   font-size: 1.05rem;
   color: var(--color-text-secondary);
-  transition: color 200ms var(--ease);
+  transition: color 300ms var(--hiw-ease);
 }
 .how-it-works__tab-desc{
- color: var(--color-text-muted);
+  display: grid;
+  grid-template-rows: 0fr;
+  opacity: 0;
+  color: var(--color-text-muted);
   font-size: 0.9rem;
   line-height: 1.5;
-  margin-top: 6px;
- 
-  /* Collapsed by default: clipped to zero height rather than display:none,
-     so the height/opacity transition has something to animate. Content
-     stays in the DOM either way — see the file header comment on why
-     that's a deliberate accessibility choice, not an oversight. */
-  max-height: 0;
-  opacity: 0;
-  overflow: hidden;
-  transition: max-height 300ms var(--ease), opacity 200ms var(--ease), margin-top 300ms var(--ease);
-}
+  /* closing: height and fade together, fade is quick */
+  transition:
+    grid-template-rows 450ms var(--hiw-ease),
+    opacity 160ms ease;}
 
- 
+
+
+ .how-it-works__tab-desc-inner {
+  display: block;
+  min-height: 0;
+  overflow: hidden;
+}
+.how-it-works__tab-desc-inner::before {   /* spacing that collapses with the content */
+  content: "";
+  display: block;
+  height: 6px;
+}
 /* ==========================================================================
    Active state
    ========================================================================== */
@@ -136,11 +160,16 @@ gap: 2em;
   color: var(--color-brand-ink);
 }
 .how-it-works__tab.is-active .how-it-works__tab-desc {
-  max-height: 200px; /* comfortably above any real description's rendered height */
+grid-template-rows: 1fr;
   opacity: 1;
+  /* opening: text fades in slightly after the height starts */
+  transition:
+    grid-template-rows 450ms var(--hiw-ease),
+    opacity 350ms ease 100ms;
 }
 .how-it-works__tab.is-active .how-it-works__tab-icon {
-  background: var(--color-brand-primary);
+ background: var(--color-brand-primary);
+  transform: scale(1.06);
 }
  
 .how-it-works__tab:hover:not(.is-active) {

@@ -1,12 +1,4 @@
-:root {
-  /* --color-brand-primary: #28bfda; */
-  /* --color-brand-ink: #212529; */
-  /* --color-text-secondary: #495057; */
-  /* --color-text-muted: #6c757d; */
-  /* --color-border-default: #ced4da; */
 
-  --ease: cubic-bezier(0.4, 0, 0.2, 1);
-}
 
 .features-section {
   padding-block: var(--section-padding-y-lg, 6rem);
@@ -17,11 +9,15 @@
   margin: 0 auto 3.5rem;
   text-align: center;
 }
-.features-grid__header h2 {
-  font-family: var(--font-heading);
+.features-title{
   font-weight: 700;
  font-size: clamp(2rem, 4vw, 3.25rem);
   margin: 0 0 12px;
+    font-family: var(--font-heading);
+    font-size: clamp(2rem, 4vw, 3.25rem);
+    line-height: var(--line-height-tight);
+    font-weight: var(--font-weight-semibold);
+    letter-spacing: var(--letter-spacing-tight);
 }
 .features-grid__header p {
   color: var(--color-text-secondary);
@@ -32,7 +28,7 @@
 .features-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 20px;
+  gap: 30px;
 }
 
 /*
@@ -56,16 +52,16 @@
   inset: -10px; /* the gap size between card edge and the outer ring */
   border: 1px solid var(--color-border-default);
   border-radius: calc(var(--radius-lg) + 6px);
-  opacity: 0;
-  background: var(--color-bg-hero);
-  transition: opacity, background 200ms var(--ease);
+  opacity: 1;
+  background: #fafafa;
+  /* transition: opacity, background 200ms var(--ease); */
   pointer-events: none;
   z-index: -1;
 }
 
-.features-grid__card:hover::after {
+/* .features-grid__card:hover::after {
   opacity: 1;
-}
+} */
 
 .features-grid__title {
   font-family: var(--font-heading);

@@ -1,10 +1,12 @@
-.process-showcase{
+/*.process-showcase{
     position: relative;
     padding-block: clamp(4rem, 8vw, 7.5rem);
     background:
     radial-gradient(ellipse 800px 500px at 50% -10%, rgba(40,191,218,.14), transparent 65%),
     #f2f8f8;
 }
+
+
 
  .process-showcase__intro {
     width: min(100%, 680px);
@@ -41,15 +43,12 @@
 
 }
 .process-showcase__item{
-    /* position: relative; */
-    /* min-height: 100vh; */
+    
     position: sticky;
     top: 80px;
     min-height: 500px;
 }
-/* .process-showcase__item:nth-child(1){
- top: 90px;
-} */
+
 .process-showcase__card{
     background-color: var(--color-brand-primary);
     padding: clamp(1.5rem, 4vw, 3rem);
@@ -61,7 +60,7 @@
 
       will-change: transform;
     z-index: 1;
-    /* margin-top: -20px; */
+   
     
 }
 
@@ -305,4 +304,115 @@
         grid-template-columns: 1fr;
           row-gap: 3rem;
     }
+}
+*/
+
+
+
+
+.section--processes-examples{
+    position: relative;
+    padding-block: clamp(4rem, 8vw, 7.5rem);
+    background:var( --color-bg-section-alt);
+     text-align: center;
+      padding-block: clamp(2.5rem, 5vw, 3.5rem);
+   
+}
+
+/* Small label above the phrase */
+ .section__headline {
+  margin: 0 0 clamp(.75rem, 2vw, 1.25rem);
+  font-size: clamp(1rem, .7rem + .25vw, 2.5rem);
+  font-weight: 700;
+  letter-spacing: .16em;
+  text-transform: uppercase;
+  color: var(--color-brand-primary-dark, #005f6b);
+}
+.process-rotator {
+  --step: 3s;                              /* time each phrase gets */
+  --cycle: calc(var(--step) * 4);          /* 4 phrases */
+  --rot-ease: cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.process-rotator__title {
+ margin: 0;
+  /* 28px at 320px wide, scales smoothly, caps at 60px */
+  font-size: clamp(1.25rem, 1.1rem + 3.2vw, 2.85rem);
+  font-weight: 700;
+  line-height: 1.15;
+  letter-spacing: -0.02em;
+  text-wrap: balance;  
+}
+
+/* Window clips the slide. Padding keeps descenders (g, p, y) from being cut. */
+.process-rotator__window {
+  display: inline-grid;        /* width = widest phrase, so nothing below shifts */
+  overflow: hidden;
+  padding-block: 0.12em;
+  margin-block: -0.12em;
+  vertical-align: bottom;
+  margin: 0 auto;
+}
+
+.process-rotator__item {
+  grid-area: 1 / 1;            /* all phrases share one cell */
+  color: var(--color-brand-primary-dark, #005f6b);
+  opacity: 0;
+  filter: blur(6px);
+  transform: translateY(105%);
+  animation: rot-roll var(--cycle) var(--rot-ease) infinite both;
+  animation-delay: calc(var(--i) * var(--step));   /* stagger each phrase */
+}
+
+/* One phrase's 12s life: rise in, hold, exit upward, reset unseen below */
+@keyframes rot-roll {
+  0%      { opacity: 0; filter: blur(6px); transform: translateY(105%); }
+  5%      { opacity: 1; filter: blur(0);   transform: none; }
+  25%     { opacity: 1; filter: blur(0);   transform: none; }
+  30%     { opacity: 0; filter: blur(6px); transform: translateY(-105%); }
+  30.01%,
+  100%    { opacity: 0; filter: blur(6px); transform: translateY(105%); }
+}
+
+/* Progress dots, synced to the same timing */
+.process-rotator__dots {
+  display: flex;
+  gap: 8px;
+  margin: clamp(1rem, 2.5vw, 1.75rem) 0 auto;
+  align-items: center;
+  justify-content: center;
+}
+.process-rotator__dots span {
+  width: 8px;
+  height: 8px;
+  border-radius: 999px;
+  background: rgba(0, 95, 107, 0.25);
+  animation: rot-dot var(--cycle) var(--rot-ease) infinite both;
+  animation-delay: calc(var(--i) * var(--step));
+}
+@keyframes rot-dot {
+  0%      { width: 8px;  background: rgba(0, 95, 107, 0.25); }
+  4%      { width: 28px; background: var(--color-brand-primary, #28bfda); }
+  25%     { width: 28px; background: var(--color-brand-primary, #28bfda); }
+  29%,
+  100%    { width: 8px;  background: rgba(0, 95, 107, 0.25); }
+}
+
+/* Pause while the pointer is over the section */
+.section--processes-examples:hover .process-rotator__item,
+.section--processes-examples:hover .process-rotator__dots span {
+  animation-play-state: paused;
+}
+
+/* Reduced motion: no animation, show all four as a static list */
+@media (prefers-reduced-motion: reduce) {
+  .process-rotator__window { display: grid; gap: 0.15em; overflow: visible; }
+  .process-rotator__item {
+    grid-area: auto;
+    opacity: 1;
+    filter: none;
+    transform: none;
+    animation: none;
+  }
+  .process-rotator__dots { display: none; }
 }
