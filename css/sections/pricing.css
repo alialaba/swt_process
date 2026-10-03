@@ -10,15 +10,20 @@
    ========================================================================== */
 
 .section-price-intro {
-  background: #fff;
-  padding-block: 4rem 0;
+  background: var( --color-bg-section-alt);
+    padding-block: clamp(2.5rem, 5vw, 3.5rem);     
   text-align: center;
 }
 .section-price-intro__title {
   font-family: var(--font-heading);
-  font-weight: 700;
+ 
   font-size: clamp(1.8rem, 3vw, 2.4rem);
   margin: 0 0 16px;
+   font-family: var(--font-heading);
+    font-size: clamp(2rem, 4vw, 3.25rem);
+    line-height: var(--line-height-tight);
+    font-weight: var(--font-weight-semibold);
+    letter-spacing: var(--letter-spacing-tight);
 }
 .section-price-intro__content {
   max-width: 640px;
@@ -42,9 +47,11 @@
   
 }
 .section--price h2 {
-  font-family: var(--font-heading);
-  font-weight: 700;
-  font-size: clamp(1.7rem, 2.8vw, 2.2rem);
+   font-family: var(--font-heading);
+    font-size: clamp(2rem, 4vw, 3.25rem);
+    line-height: var(--line-height-tight);
+    font-weight: var(--font-weight-semibold);
+    letter-spacing: var(--letter-spacing-tight);
   color: var(--color-brand-ink);
   margin: 0 0 10px;
 }
@@ -135,7 +142,7 @@
   max-width: 920px;
   margin: 0 auto;
   background: #fff;
-  border: 1px solid var(--color-hairline);
+  border: 1px solid #ced4da;
   border-radius: var(--radius-lg);
   /* Bumped from 0.08 opacity — the card needs more lift to read as
      "floating" against this brighter, busier gradient than it did
