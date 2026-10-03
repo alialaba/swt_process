@@ -2,6 +2,7 @@
 
 .faq {
   padding-block: var(--section-padding-y-lg, 6rem);
+  background: var(  --color-bg-section-alt);
 }
 
 .faq__title {

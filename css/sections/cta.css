@@ -2,8 +2,7 @@
 .section--button-call {
   position: relative;
   z-index: 2;
-   padding-block: clamp(2.5rem, 5vw, 3.5rem);
-  background: #f2f8f8;              /* same light tone as pricing */
+   padding-block: clamp(2.5rem, 5vw, 3.5rem);           /* same light tone as pricing */
 }
 
 
@@ -23,8 +22,6 @@
     linear-gradient(135deg, #5fd4e8, #28bfda);
   box-shadow: 0 24px 60px rgba(0, 56, 64, .25);
 
-  /* the overlap: pulls the card down over the footer */
-  margin-bottom: clamp(-3.5rem, -5vw, -2rem);
 }
 
 .section--button-call__text-col { flex: 1 1 0; min-width: 0; }
@@ -53,7 +50,7 @@
   align-items: center;
   gap: 10px;
   padding: 15px 28px;
-  border-radius: 999px;
+  border-radius: 6px;
   background: #003840;
   color: #fff;
   font-weight: 700;
