@@ -1,0 +1,80 @@
+/* ---------- CTA section ---------- */
+.section--button-call {
+  position: relative;
+  z-index: 2;
+   padding-block: clamp(2.5rem, 5vw, 3.5rem);
+  background: #f2f8f8;              /* same light tone as pricing */
+}
+
+
+
+.section--button-call .row {
+    max-width: 1040px;
+  margin-inline: auto;
+  padding-inline: 1.25rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: clamp(1.25rem, 4vw, 3rem);
+  padding: clamp(1.75rem, 4vw, 3rem);
+  border-radius: 24px;
+  background:
+    radial-gradient(ellipse 500px 300px at 100% 0%, rgba(255,255,255,.35), transparent 60%),
+    linear-gradient(135deg, #5fd4e8, #28bfda);
+  box-shadow: 0 24px 60px rgba(0, 56, 64, .25);
+
+  /* the overlap: pulls the card down over the footer */
+  margin-bottom: clamp(-3.5rem, -5vw, -2rem);
+}
+
+.section--button-call__text-col { flex: 1 1 0; min-width: 0; }
+
+.section--button-call__title {
+  margin: 0;
+  max-width: 22ch;
+  color: #003840;
+  font-size: clamp(1.4rem, 3vw, 3.5rem);
+  font-family: var(--font-heading);
+  font-weight: 700;
+  line-height: 1.15;
+  letter-spacing: -.02em;
+}
+
+.section--button-call__lead {
+  margin-top: .6rem;
+  color: rgba(0, 56, 64, .8);
+  font-size: clamp(.95rem, 1.5vw, 1.1rem);
+}
+
+.section--button-call__button-col { flex: 0 0 auto; }
+
+.section--button-call__button {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 15px 28px;
+  border-radius: 999px;
+  background: #003840;
+  color: #fff;
+  font-weight: 700;
+  font-size: 15px;
+  text-decoration: none;
+  white-space: nowrap;
+  box-shadow: 0 8px 20px rgba(0, 56, 64, .3);
+  transition: transform .15s ease, box-shadow .15s ease, background .2s;
+}
+.section--button-call__button svg { transition: transform .2s ease; }
+.section--button-call__button:hover {
+  background: #004a55;
+  transform: translateY(-2px);
+  box-shadow: 0 12px 26px rgba(0, 56, 64, .35);
+}
+.section--button-call__button:hover svg { transform: translateY(2px); }
+.section--button-call__button:focus-visible { outline: 3px solid #003840; outline-offset: 3px; }
+
+/* Mobile: stack, button full width */
+@media (max-width: 760px) {
+  .section--button-call .row { flex-direction: column; align-items: stretch; text-align: left; }
+  .section--button-call__button { width: 100%; justify-content: center; }
+}
+

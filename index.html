@@ -456,106 +456,115 @@
 
       </div>
     </section>
-    <section class="section section--price" id="pricing">
+<section class="section section-price-intro">
   <div class="container">
-    <p class="eyebrow">PRICING</p>
+    <h2 class="section section-price-intro__title">Fair and simple pricing</h2>
+    <p class="section section-price-intro__content">
+        You can add as many people as you want to SweetProcess and have the peace of
+        mind knowing that you will only be billed for people who have been added. You
+        can also set the maximum number of users your teammates can add, so you have
+        control over your billing. You and all users added get access to all features
+        for the same price... It is a SweetDeal!
+    </p>
+  </div>
+</section>
+
+<section class="section section--price" id="pricing">
+  <div class="container">
     <h2>Ready to get started?</h2>
     <p class="sub">Join the over 40,000 companies who have said 'Yes' to SweetProcess.</p>
 
-    <div class="price-toggle" role="group" aria-label="Billing interval">
-      <span class="price-toggle__thumb" aria-hidden="true"></span>
-      <button type="button" class="price-toggle__btn is-active" data-interval="monthly" aria-pressed="true">Monthly</button>
-      <button type="button" class="price-toggle__btn" data-interval="yearly" aria-pressed="false">
-        Yearly <span class="price-toggle__save">Save 16%</span>
+    <!-- Toggle: sliding pill, active label gets weight/color change via
+         .is-yearly on the wrapper — see pricing.js -->
+    <div class="price-toggle" data-price-toggle>
+      <span class="price-toggle__label" data-toggle-label="monthly">Monthly</span>
+      <button type="button" class="price-toggle__switch" role="switch" aria-checked="false" aria-label="Toggle yearly billing">
+        <span class="price-toggle__thumb" aria-hidden="true"></span>
       </button>
+      <span class="price-toggle__label" data-toggle-label="yearly">
+        Yearly
+        <span class="price-toggle__save-tooltip">Save 16%</span>
+      </span>
     </div>
 
-    <div class="price-banner">
-      <span>🇳🇬 Looks like you're in Nigeria: <b>80% regional discount</b> available.</span>
-      <a href="">Activate 80% off</a>
+    <div class="price-box monthly" id="price-box">
+
+      <div class="price-box__main">
+
+        <div class="price-box__values-box">
+          <div class="price-box__value-row">
+            <div class="price-box__value-number">
+              <div class="price-box__value-number__currency">$</div>
+              <div class="price-box__value-number__number">
+                <span class="yearly">82<span class="cents">.50</span></span>
+                <span class="monthly">99</span>
+              </div>
+              <div class="price-box__value-number__period">/MO</div>
+            </div>
+            <div class="price-box__value-text">
+              for a team with up to 10 members
+              <span class="yearly">(billed yearly)</span>
+            </div>
+          </div>
+
+          <div class="price-box__plus-row">
+            <span class="price-box__plus-icon" aria-hidden="true">
+              <svg width="14" height="14" viewBox="0 0 14 14"><path d="M7 1V13M1 7H13" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+            </span>
+            <span class="visually-hidden">+</span>
+          </div>
+
+          <div class="price-box__value-row">
+            <div class="price-box__value-number">
+              <div class="price-box__value-number__currency">$</div>
+              <div class="price-box__value-number__number">
+                <span class="yearly">4<span class="cents">.17</span></span>
+                <span class="monthly">5</span>
+              </div>
+              <div class="price-box__value-number__period">/MO</div>
+            </div>
+            <div class="price-box__value-text">
+              for each additional member
+              <span class="yearly">(billed yearly)</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Right column: same text as before, restyled as compact
+           icon-led items instead of full-width paragraph blocks, so
+           all of it fits alongside the price values without needing
+           to scroll past them. -->
+      <div class="price-box__aside">
+
+        <div class="price-box__regional_discount">
+          <div class="price-box__regional_discount__title">
+            <span class="price-box__regional_discount__flag">🇳🇬</span>Nigeria Discount
+          </div>
+          <div>Looks like you are from Nigeria. We offer a <b>80% regional discount</b>.</div>
+          <a class="price-box__regional_discount__activate" href="">Activate 80% off</a>
+        </div>
+
+        <div class="price-box__guarantee">
+          <svg class="price-box__aside-icon" width="18" height="18" viewBox="0 0 18 18" aria-hidden="true"><path d="M9 2L15 4.5V8.5C15 12 12.5 14.8 9 16C5.5 14.8 3 12 3 8.5V4.5L9 2Z" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round" fill="none"/></svg>
+          <div>
+            <div class="price-box__guarantee__title">30 day money back Guarantee</div>
+            Not seeing a measurable improvement to your business? We’ll refund your money, no-questions asked, and offer you a free 1-hour phone consultation to brainstorm strategies to streamline your company's operations.
+          </div>
+        </div>
+
+        <div class="price-box__smallteams">
+          <svg class="price-box__aside-icon" width="18" height="18" viewBox="0 0 18 18" aria-hidden="true"><circle cx="9" cy="9" r="7.25" stroke="currentColor" stroke-width="1.4" fill="none"/><path d="M9 5V9L11.5 10.5" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" fill="none"/></svg>
+          <div>
+            <div class="price-box__smallteams__title">Fewer than 10 employees?</div>
+            <a href="/accounts/signup/annualdiscount/" class="price-box__smallteams__cta">Start your free trial</a> today and access exclusive pricing designed for smaller teams.
+          </div>
+        </div>
+
+      </div>
+
     </div>
-
-    <div class="price-box monthly" id="price-box" aria-live="polite">
-
-      <!-- Card 1: featured -->
-      <article class="price-card price-card--featured">
-        <span class="price-card__tag">Most popular</span>
-        <h3>Team plan</h3>
-        <p class="price-card__for">For a team with up to 10 members</p>
-        <div class="price-card__price">
-          <span class="price-card__currency">$</span>
-          <span class="price-card__number">
-            <span class="yearly">82<small>.50</small></span>
-            <span class="monthly">99</span>
-          </span>
-          <span class="price-card__period">/ month</span>
-        </div>
-        <p class="price-card__billed yearly">Billed yearly</p>
-        <p class="price-card__billed monthly">Billed monthly</p>
-        <ul class="price-card__list">
-          <li>Up to 10 team members</li>
-          <li>Feature two</li>
-          <li>Feature three</li>
-          <li>Feature four</li>
-        </ul>
-        <a class="btn btn--primary" href="#signup">Start free trial</a>
-      </article>
-
-      <!-- Card 2 -->
-      <article class="price-card">
-        <h3>Extra members</h3>
-        <p class="price-card__for">For each additional member</p>
-        <div class="price-card__price">
-          <span class="price-card__currency">$</span>
-          <span class="price-card__number">
-            <span class="yearly">4<small>.17</small></span>
-            <span class="monthly">5</span>
-          </span>
-          <span class="price-card__period">/ month</span>
-        </div>
-        <p class="price-card__billed yearly">Billed yearly</p>
-        <p class="price-card__billed monthly">Billed monthly</p>
-        <ul class="price-card__list">
-          <li>Add anyone, anytime</li>
-          <li>Same features as the Team plan</li>
-          <li>Pay only for what you use</li>
-        </ul>
-        <a class="btn" href="#signup">Add to my plan</a>
-      </article>
-
-      <!-- Card 3 -->
-      <article class="price-card">
-        <h3>Small teams</h3>
-        <p class="price-card__for">Fewer than 10 employees?</p>
-        <div class="price-card__price">
-          <span class="price-card__currency">$</span>
-          <span class="price-card__number">0</span>
-          <span class="price-card__period">/ 14 days</span>
-        </div>
-        <p class="price-card__billed">No credit card needed</p>
-        <ul class="price-card__list">
-          <li>Full access during the trial</li>
-          <li>Exclusive pricing for smaller teams</li>
-          <li>Cancel anytime</li>
-        </ul>
-        <a class="btn" href="#signup">Start free trial</a>
-      </article>
-    </div>
-
-    <ul class="trust-row">
-      <li>
-        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l7 3v5c0 4.5-3 8-7 10-4-2-7-5.5-7-10V6l7-3z"/><path d="M9 12l2 2 4-4"/></svg>
-        <span><strong>30-day money-back</strong>No questions asked</span>
-      </li>
-      <li>
-        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>
-        <span><strong>Cancel anytime</strong>No commitments</span>
-      </li>
-      <li>
-        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 005 5L15 13l5 2v4a2 2 0 01-2 2A16 16 0 013 6a2 2 0 012-2z"/></svg>
-        <span><strong>Free 1-hour call</strong>Strategy session if you're refunded</span>
-      </li>
-    </ul>
   </div>
 </section>
 
@@ -692,9 +701,131 @@
         </ul>
       </div>
     </section>
-
+<section class="section section--button-call">
+	<div class="container">
+		<div class="row">
+			<div class="section--button-call__text-col">
+				<h5 class="section--button-call__title">Avoid wasting time documenting the wrong tasks.</h5>
+				<div class="section--button-call__lead">Download our free Systemization Checklist.</div>
+			</div>
+			<div class="section--button-call__button-col">
+				<a class="section--button-call__button" href="https://www.sweetprocess.com/checklist?utm_source=homepagefooter&amp;utm_medium=banner&amp;utm_campaign=checklist" target="_blank" title="Stop being the bottleneck in your company" rel="noopener noreferrer">Download it now</a>
+			</div>
+		</div>
+	</div>
+</section>
   </main>
-
+<footer class="section section-footer">
+  <div class="container-fluid">
+    <div class="row">
+      <div class="section-footer__wrapper">
+        <div class="section-footer__list-col">
+          <div class="section-footer__list-title">Learn</div>
+          <ul class="section-footer__content-list">
+            <li><a class="section-footer__content-list__link" rel="noopener noreferrer" href="https://www.sweetprocess.com/standard-operating-procedure/">What is a Standard Operating Procedure</a></li>
+            <li><a class="section-footer__content-list__link" rel="noopener noreferrer" href="https://www.sweetprocess.com/process-documentation/">What is Process Documentation</a></li>
+            <li><a class="section-footer__content-list__link" rel="noopener noreferrer" href="https://www.sweetprocess.com/policy-management/">What is Policy Management</a></li>
+            <li><a class="section-footer__content-list__link" rel="noopener noreferrer" href="https://www.sweetprocess.com/knowledge-management/">What is Knowledge Management</a></li>
+            <li><a class="section-footer__content-list__link" rel="noopener noreferrer" href="https://www.sweetprocess.com/workflow-management/">What is Workflow Management</a></li>
+            <li><a class="section-footer__content-list__link" rel="noopener noreferrer" href="https://www.sweetprocess.com/operations-management/">What is Operations Management</a></li>
+            <li><a class="section-footer__content-list__link" rel="noopener noreferrer" href="https://www.sweetprocess.com/workflow-automation/">What is Workflow Automation</a></li>
+            <li><a class="section-footer__content-list__link" rel="noopener noreferrer" href="https://www.sweetprocess.com/business-process-management/">What is Business Process Management</a></li>
+            <li><a class="section-footer__content-list__link" rel="noopener noreferrer" href="https://www.sweetprocess.com/business-process-automation/">What is Business Process Automation</a></li>
+            <li><a class="section-footer__content-list__link" rel="noopener noreferrer" href="https://www.sweetprocess.com/employee-onboarding/">The Complete Employee Onboarding Process</a></li>
+          </ul>
+        </div>
+        <div class="section-footer__list-col">
+          <div class="section-footer__list-title">Guides</div>
+          <ul class="section-footer__content-list">
+            <li><a class="section-footer__content-list__link" rel="noopener noreferrer" href="https://www.sweetprocess.com/sop/">How To Write an SOP</a></li>
+            <li><a class="section-footer__content-list__link" rel="noopener noreferrer" href="https://www.sweetprocess.com/work-instructions/">How To Write Work Instructions</a></li>
+            <li><a class="section-footer__content-list__link" rel="noopener noreferrer" href="https://www.sweetprocess.com/how-to-write-a-procedure/">How To Write a Procedure</a></li>
+            <li><a class="section-footer__content-list__link" rel="noopener noreferrer" href="https://www.sweetprocess.com/how-to-write-a-policy/">How To Write a Policy</a></li>
+            <li><a class="section-footer__content-list__link" rel="noopener noreferrer" href="https://www.sweetprocess.com/how-to-write-a-knowledge-base-article/">How To Write a Knowledge Base Article</a></li>
+            <li><a class="section-footer__content-list__link" rel="noopener noreferrer" href="https://www.sweetprocess.com/operations-manual/">How To Create an Operations Manual</a></li>
+            <li><a class="section-footer__content-list__link" rel="noopener noreferrer" href="https://www.sweetprocess.com/how-to-create-a-quiz/">How To Create a Quiz</a></li>
+            <li><a class="section-footer__content-list__link" rel="noopener noreferrer" href="https://www.sweetprocess.com/business-process-mapping/">Business Process Mapping</a></li>
+            <li><a class="section-footer__content-list__link" rel="noopener noreferrer" href="https://www.sweetprocess.com/business-process-management/">Business Process Management</a></li>
+          </ul>
+        </div>
+        <div class="section-footer__list-col">
+          <div class="section-footer__list-title">Features</div>
+          <ul class="section-footer__content-list">
+            <li><a class="section-footer__content-list__link" rel="noopener noreferrer" href="https://www.sweetprocess.com/standard-operating-procedure-software/">Standard Operating Procedure Software</a></li>
+            <li><a class="section-footer__content-list__link" rel="noopener noreferrer" href="https://www.sweetprocess.com/process-documentation-software/">Process Documentation Software</a></li>
+            <li><a class="section-footer__content-list__link" rel="noopener noreferrer" href="https://www.sweetprocess.com/policy-management-software/">Policy Management Software</a></li>
+            <li><a class="section-footer__content-list__link" rel="noopener noreferrer" href="https://www.sweetprocess.com/work-instruction-software/">Work Instructions Software</a></li>
+            <li><a class="section-footer__content-list__link" rel="noopener noreferrer" href="https://www.sweetprocess.com/knowledge-base-software/">Knowledge Base Software</a></li>
+            <li><a class="section-footer__content-list__link" rel="noopener noreferrer" href="https://www.sweetprocess.com/task-management-software/">Task Management Software</a></li>
+            <li><a class="section-footer__content-list__link" rel="noopener noreferrer" href="https://www.sweetprocess.com/policy-and-procedure-software/">Policy and Procedure Software</a></li>
+          </ul>
+        </div>
+        <div class="section-footer__list-col">
+          <div class="section-footer__list-title">Templates</div>
+          <ul class="section-footer__content-list">
+            <li><a class="section-footer__content-list__link" rel="noopener noreferrer" href="https://www.sweetprocess.com/standard-operating-procedure-template/">Standard Operating Procedure Template</a></li>
+            <li><a class="section-footer__content-list__link" rel="noopener noreferrer" href="https://www.sweetprocess.com/work-instruction-template/">Work Instruction Template</a></li>
+            <li><a class="section-footer__content-list__link" rel="noopener noreferrer" href="https://www.sweetprocess.com/operations-manual-template/">Operations Manual Template</a></li>
+            <li><a class="section-footer__content-list__link" rel="noopener noreferrer" href="https://www.sweetprocess.com/policy-and-procedure-template/">Policy and Procedure Template</a></li>
+            <li><a class="section-footer__content-list__link" rel="noopener noreferrer" href="https://www.sweetprocess.com/checklist-template/">Checklist Template</a></li>
+            <li><a class="section-footer__content-list__link" rel="noopener noreferrer" href="https://www.sweetprocess.com/organizational-chart-template/">Organizational Chart Template</a></li>
+          </ul>
+        </div>
+        <div class="section-footer__list-col">
+          <div class="section-footer__list-title">Compare</div>
+          <ul class="section-footer__content-list">
+            <li><a class="section-footer__content-list__link" rel="noopener noreferrer" href="https://www.sweetprocess.com/process-street-vs-sweetprocess/">Process Street Vs SweetProcess</a></li>
+            <li><a class="section-footer__content-list__link" rel="noopener noreferrer" href="https://www.sweetprocess.com/trainual-vs-sweetprocess/">Trainual Vs SweetProcess</a></li>
+            <li><a class="section-footer__content-list__link" rel="noopener noreferrer" href="https://www.sweetprocess.com/scribe-vs-sweetprocess/">Scribe Vs SweetProcess</a></li>
+            <li><a class="section-footer__content-list__link" rel="noopener noreferrer" href="https://www.sweetprocess.com/tallyfy-vs-sweetprocess/">Tallyfy Vs SweetProcess</a></li>
+            <li><a class="section-footer__content-list__link" rel="noopener noreferrer" href="https://www.sweetprocess.com/tango-vs-sweetprocess/">Tango Vs SweetProcess</a></li>
+            <li><a class="section-footer__content-list__link" rel="noopener noreferrer" href="https://www.sweetprocess.com/kissflow-vs-sweetprocess/">Kissflow Vs SweetProcess</a></li>
+            <li><a class="section-footer__content-list__link" rel="noopener noreferrer" href="https://www.sweetprocess.com/tettra-vs-sweetprocess/">Tettra Vs SweetProcess</a></li>
+          </ul>
+        </div>
+        <div class="section-footer__list-col">
+          <div class="section-footer__list-title">SweetProcess</div>
+          <ul class="section-footer__content-list">
+            <li><a class="section-footer__content-list__link" href="/">Home</a></li>
+            <li><a class="section-footer__content-list__link" href="/team/">Meet the Team</a></li>
+            <li><a class="section-footer__content-list__link" href="/careers/">Careers</a></li>
+            <li><a class="section-footer__content-list__link" href="/blog/">Blog</a></li>
+            <li><a class="section-footer__content-list__link" href="/contact/">Contact</a></li>
+            <li><a class="section-footer__content-list__link" href="/referral-program/">Referral Program</a></li>
+            <li><a class="section-footer__content-list__link" href="/market/sweetprocess-templates/d3a4bad221b348208205344be8bb41c6/">Templates</a></li>
+          </ul>
+        </div>
+        <div class="section-footer__list-col">
+          <div class="section-footer__list-title">Customers</div>
+          <ul class="section-footer__content-list">
+            <li><a class="section-footer__content-list__link" href="/accounts/login/">Login</a></li>
+            <li><a class="section-footer__content-list__link" href="/help/contact/">Support</a></li>
+            <li><a class="section-footer__content-list__link" href="/help/">Knowledge Base</a></li>
+          </ul>
+        </div>
+        <div class="section-footer__list-col">
+          <div class="section-footer__list-title">Connect with us</div>
+          <ul class="section-footer__content-list">
+            <li><a class="section-footer__content-list__link" rel="noopener noreferrer" href="https://twitter.com/sweetprocess">on Twitter</a></li>
+            <li><a class="section-footer__content-list__link" rel="noopener noreferrer" href="https://www.facebook.com/SweetProcess">on Facebook</a></li>
+            <li><a class="section-footer__content-list__link" rel="noopener noreferrer" href="https://www.linkedin.com/company/sweetprocess">on Linkedin</a></li>
+            <li><a class="section-footer__content-list__link" rel="noopener noreferrer" href="tel:1-800-476-0732">(800) 476-0732</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="section-footer__button-container">
+        <a class="section-footer__button" href="/accounts/signup/">Start free trial</a>
+      </div>
+    </div>
+    <div class="row">
+      <div class="section-footer__final-links">
+        <a href="">© 2026 SweetProcess</a>
+        · <a href="/privacy/">Privacy Policy</a>
+        · <a href="/terms/">Terms &amp; Conditions</a>
+      </div>
+    </div>
+  </div>
+</footer>
 
   <script src="./js/main.js" type="module"></script>
 
